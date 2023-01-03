@@ -28,7 +28,7 @@ jobs:
   ctvsuggesttrain-train-model:
     runs-on: ubuntu-latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PAT: ${% raw %}{{ secrets.GITHUB_TOKEN }}{% endraw %}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
