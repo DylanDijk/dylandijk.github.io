@@ -28,3 +28,9 @@ in the `_config.yml` file.
 
 ## Generating favicons
 Follow [Tutorial](https://chirpy.cotes.page/posts/customize-the-favicon/). The favicons are stored in the path `assets/img/favicons`.
+
+***
+
+## Adding posts
+
+To add a post that comes up on the home page 
