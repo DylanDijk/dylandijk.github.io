@@ -5,21 +5,9 @@ categories: [Statistics, Graphical Models]
 tags: [Gaussian, Statistics, Graphical Models]     # TAG names should always be lowercase
 math: true
 ---
-$$\DeclareMathOperator*{\argmin}{argmin}$$
-$$\DeclareMathOperator*{\argmax}{argmax}$$
-$$\newcommand{\argminun}{\underset{\mathbf{w}}{\argmin}}$$
-$$\newcommand{\argmaxun}{\underset{\mathbf{w}}{\argmax}}$$
-$$\newcommand{\bxi}{\mathbf{x}_i}$$
-$$\newcommand{\bx}{\mathbf{x}}$$
-$$\newcommand{\bw}{\mathbf{w}}$$
-$$\newcommand{\bX}{\mathbf{X}}$$
-$$\newcommand{\bY}{\mathbf{Y}}$$
-$$\newcommand{\bphi}{\boldsymbol\phi}$$
 
 ## MVN Distribution
 
-- $$X \sim N(\boldsymbol{\mu}; \Sigma)$$
-$$\bmu$$
+$$X \sim N(\bmu; \Sigma)$$
 
-$$\RR$$
-$\RR$
+$$\bmu$$

@@ -7,12 +7,32 @@ Main things:
   - I have used the [Basic git checkout method to install `rbenv`](https://github.com/rbenv/rbenv#basic-git-checkout)
   - `.rbenv` directory exists in my home directory
   - There is then further [documentaion](https://github.com/rbenv/rbenv#installing-ruby-versions) on installing Ruby and Ruby gems.
-    - Main thing is to set the Ruby version you want for your project and then install the gems. [commands](https://github.com/rbenv/rbenv#command-reference) provided show how to view/set a Ruby version locally or globally.
+    - Main thing is to set the Ruby version you want for your project and then install the gems. [Commands](https://github.com/rbenv/rbenv#command-reference) provided show how to view/set a Ruby version locally or globally.
+
+Nice explanation of what `rbenv` does, from [How it works Section](https://github.com/rbenv/rbenv#how-it-works) of `rbenv` documentation:
+> After `rbenv` injects itself into your PATH at installation time, **any invocation of `ruby`, `gem`, `bundler`, or other Ruby-related executable will first activate `rbenv`**. Then, `rbenv` scans the current project directory for a file named `.ruby-version`. If found, that file determines the version of Ruby that should be used within that directory. Finally, `rbenv` looks up that Ruby version among those installed under `~/.rbenv/versions`.     
 
 
-- To build locally run in terminal: ` bundle exec jekyll s`
-
+- To build website locally run in terminal: ` bundle exec jekyll s`
+  - [`bundle exec`](https://bundler.io/v2.4/man/bundle-exec.1.html) executes the command, in this case `jekyll s`, with all the gems specified in the `Gemfile` available to the Ruby program(s).
+- Documentation for [`jekyll` commands](https://jekyllrb.com/docs/usage/) explains the usage of the `jekyll` commands. `jekyll s` is equivalent to `jekyll serve`,
 ***
+
+## Customising [Chirpy Theme](https://github.com/cotes2020/jekyll-theme-chirpy)
+
+### Setting up global Tex macros
+
+Whilst trying to write maths in a `_post` I noticed that setting up new commands (e.g `\newcommand{\bxi}{\mathbf{x}_i}`) took up space at the beginning of the post. In addition, it is a bit of a pain to have to set up the  macros on each post.
+
+The chirpy theme uses [MathJax to write mathematics](https://chirpy.cotes.page/posts/text-and-typography/#mathematics). The [`_includes\js-selector.html`](https://github.com/cotes2020/jekyll-theme-chirpy/blob/v5.4.0/_includes/js-selector.html) file (v5.4.0 tag) of the Chirpy theme repository, has a section where we can modify the MathJax configuration. In v5.4.0 of the `_includes\js-selector.html` that is where the MathJax configuration part exists.
+
+We can then add Tex macros here as I have done in [this commit](https://github.com/DylanDijk/dylandijk.github.io/commit/58024f9210da578df678985054f04958b88ac479). This [Section](https://docs.mathjax.org/en/latest/input/tex/extensions/configmacros.html#configmacros-options) of the MathJax documentation describes how you can set-up macros, in the MathJax configuration.
+
+In order to make this change to the `_includes\js-selector.html` file we need to make our own `_includes` folder that includes the `js-selector.html` file. This method is described in the [Overriding theme defaults](https://jekyllrb.com/docs/themes/#overriding-theme-defaults) section, they say:
+
+> With a clear understanding of the theme’s files, you can now override any theme file by creating a similarly named file in your Jekyll site directory.
+>
+>Let’s say, for a second example, you want to override Minima’s footer. In your Jekyll site, create an _includes folder and add a file in it called footer.html. Jekyll will now use your site’s footer.html file instead of the footer.html file from the Minima theme gem.
 
 ## Changes to webpage setup
 
@@ -33,4 +53,4 @@ Follow [Tutorial](https://chirpy.cotes.page/posts/customize-the-favicon/). The f
 
 ## Adding posts
 
-To add a post that comes up on the home page 
+To add a post that comes up on the home page
