@@ -8,7 +8,7 @@ tags: [Git, GitHub, Cheat sheet]     # TAG names should always be lowercase
 # Git
 
 
-## Setting up:
+## Setting up
 - [**Already have local directory**](https://kbroman.org/github_tutorial/pages/init.html) and want to create remote GitHub repository
 	- If you have a local directory you need to run `git init` to create a git repository.
 	- Then you can link this with a remote repo.
