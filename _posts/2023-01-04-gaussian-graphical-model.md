@@ -15,8 +15,11 @@ $$\newcommand{\bw}{\mathbf{w}}$$
 $$\newcommand{\bX}{\mathbf{X}}$$
 $$\newcommand{\bY}{\mathbf{Y}}$$
 $$\newcommand{\bphi}{\boldsymbol\phi}$$
-$$\newcommand{\bmu}{\boldsymbol\mu}$$
+
 ## MVN Distribution
 
 - $$X \sim N(\boldsymbol{\mu}; \Sigma)$$
 $$\bmu$$
+
+$$\RR$$
+$\RR$
