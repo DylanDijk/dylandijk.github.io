@@ -12,6 +12,15 @@ Main things:
 Nice explanation of what `rbenv` does, from [How it works Section](https://github.com/rbenv/rbenv#how-it-works) of `rbenv` documentation:
 > After `rbenv` injects itself into your PATH at installation time, **any invocation of `ruby`, `gem`, `bundler`, or other Ruby-related executable will first activate `rbenv`**. Then, `rbenv` scans the current project directory for a file named `.ruby-version`. If found, that file determines the version of Ruby that should be used within that directory. Finally, `rbenv` looks up that Ruby version among those installed under `~/.rbenv/versions`.     
 
+- Running `bundle` is equivalent to running [`bundle install`](https://bundler.io/v2.4/man/bundle-install.1.html#DESCRIPTION).
+
+Nice explanation of `bundle` command and Gemfile:
+
+>>Gemfile contains your project dependency on gem(s), that you manually mention with version(s) specified, but those gem(s) inturn depends on other gem(s) which is resolved by bundler automatically.
+>
+>>Gemfile.lock contain complete snapshot of all the gem(s) in Gemfile along with there associated dependency.
+>
+>>When you first call bundle install, it will create this Gemfile.lock and uses this file in all subsequent calls to bundle install, which ensures that you have all the dependencies installed and will skip dependency installation.
 
 - To build website locally run in terminal: ` bundle exec jekyll s`
   - [`bundle exec`](https://bundler.io/v2.4/man/bundle-exec.1.html) executes the command, in this case `jekyll s`, with all the gems specified in the `Gemfile` available to the Ruby program(s).
@@ -54,3 +63,9 @@ Follow [Tutorial](https://chirpy.cotes.page/posts/customize-the-favicon/). The f
 ## Adding posts
 
 To add a post that comes up on the home page
+
+
+## Deployment
+
+Currently using GitHub actions to deploy.
+ - Note that the action `actions/checkout@v2` ignores submodules by default (see [Usage](https://github.com/actions/checkout/tree/v2#usage) `submodules` line). For example the `assets/lib` folder is a submodule.
