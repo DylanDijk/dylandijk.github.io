@@ -25,6 +25,16 @@ $ git aa
 $ git add -A
 ```
 
+The git aliases are stored in the `.gitconfig` file, usually in your home folder.
+
+Another option to create git aliases is to actually make Linux aliases. This can be done by adding them to the `.bashrc` file. For example:
+
+```shell
+alias gs='git status'
+```
+
+ I can now just write `gs` in the linux terminal to run `git status`.
+
 ***
 - **origin** is an alias  _on your system_ for a **particular remote repository**. It's not actually a property of that repository.
 - A **remote repository** in Git, also called a **remote**, is a Git repository that's hosted on the Internet or another network
