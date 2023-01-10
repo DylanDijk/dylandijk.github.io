@@ -16,7 +16,7 @@ img_path: /assets/img/figures/
   - To start new vignette `usethis::use_vignette("vignette-name")`
     - There also exists `usethis::use_article("vignette-name")` which creates an article, this is similar to a vignette but it is added to `.Rbuildignore`. Therefore it is not part of the packages source code, but it will appear in `pkgdown` sites.
 
-![svm-diagram](SVM-diagram.svg)
+
 
 
 
