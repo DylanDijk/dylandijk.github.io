@@ -7,7 +7,7 @@ img_path: /assets/img/figures/
 ---
 
 **Main references**:
-- I have used 
+- I have used the [R Packages](https://r-pkgs.org/) book by Hadley Wickham.
 
 # R Package
 
