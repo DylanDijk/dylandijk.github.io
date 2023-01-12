@@ -1,13 +1,15 @@
 ---
-title: R Package Workflow
+title: Creating an R Package - Cheat Sheet
 date: 2023-01-09 09:42:00 +0000
 categories: [Cheat sheet, R]
 tags: [R, R Packages, Cheat sheet]
 img_path: /assets/img/figures/
 ---
 
+In this post, I cover the main commands that are used in the process of creating an R package. The majority of the commands are from the `usethis` and `devtools` R packages.
+
 **Main references**:
-- I have used the [R Packages](https://r-pkgs.org/) book by Hadley Wickham.
+- The [R Packages](https://r-pkgs.org/) book by Hadley Wickham covers the entire workflow of creating an R package.
 
 # R Package
 
