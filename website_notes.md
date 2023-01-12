@@ -27,6 +27,14 @@ Nice explanation of `bundle` command and Gemfile:
 - Documentation for [`jekyll` commands](https://jekyllrb.com/docs/usage/) explains the usage of the `jekyll` commands. `jekyll s` is equivalent to `jekyll serve`,
 ***
 
+I have also been able to carry out the same workflow as above but on my Windows machine (I used a Linux machine the first time I ran the workflow explained above).
+
+Setting up a Linux environment within in a Windows machine can be done by following this brief [tutorial](https://developer.zendesk.com/documentation/developer-tools/getting-started/setting-up-your-development-environment/#setting-up-a-windows-development-environment).
+
+Once I had the Linux environment set up, I cloned my webpage repo into the Linux file directory system using the Ubuntu environemt via the [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-gb&gl=gb&rtc=1).
+
+***
+
 ## Customising [Chirpy Theme](https://github.com/cotes2020/jekyll-theme-chirpy)
 
 ### Setting up global Tex macros
