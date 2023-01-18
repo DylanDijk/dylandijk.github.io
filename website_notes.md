@@ -70,7 +70,9 @@ Follow [Tutorial](https://chirpy.cotes.page/posts/customize-the-favicon/). The f
 
 ## Adding posts
 
-To add a post that comes up on the home page
+To add a post that comes up on the home page run `bundle exec jekyll post "My New Post"`.
+This is using a [jekyll plugin](https://github.com/jekyll/jekyll-compose), this can be further customised.
+
 
 
 ## Deployment
