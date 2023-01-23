@@ -12,7 +12,7 @@ tags: [GitHub, GitHub actions]     # TAG names should always be lowercase
 # Scheduling an R script with GitHub Actions
 
 I am working on a project where I want to run an R function every week. Using GitHub actions we can have this job to be scheduled to run remotely.
-It is easiest to do this if you are function exisits within the directory structure of an R package.
+It is easiest to do this if your function exists within the directory structure of an R package.
 
 In order to set up a GitHub action you need to create an Action which is a `.yaml` file.
 
