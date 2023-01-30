@@ -7,7 +7,7 @@ date: 2023-01-28 14:23 +0000
 
 On linux to install pandoc:
 
-```console
+```terminal
 $ sudo apt install \
     pandoc \
     texlive-latex-base \
@@ -19,6 +19,6 @@ $ sudo apt install \
 
 Then if you want to convert a markdown file to pdf you run:
 
-```console
+```terminal
 $ pandoc file-name.md -o file-name.pdf --pdf-engine=xelatex
 ```
