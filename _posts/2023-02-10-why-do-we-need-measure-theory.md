@@ -2,6 +2,7 @@
 layout: post
 title: Why do we need Measure Theory
 date: 2023-02-10 11:14 +0000
+math: true
 ---
 
 In this post I describe the motivation for why we need to use measure theory in probability.

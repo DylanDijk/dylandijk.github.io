@@ -4,6 +4,10 @@ title: Linux Commands
 date: 2023-02-16 14:41 +0000
 ---
 
+Philosophy of using command line is that input and output files are files.
+
+***
+
 Basic Commands:
 
 Correct grammar of command is: `verb adverb object`  
@@ -28,3 +32,8 @@ To view the flags for a command use `man` e.g `man ls`
     - within the pager can use `/` to search in the file then press `n` to search for the next file.
 - `grep` is used to search a file e.g `grep "fish" king-lear.txt`
     - to count the number of lines in a text file add `-c` `tag grep -c  "fish" king-lear.txt`
+    - to be case insensitive use `-i`
+    - use regular expressions with grep for example wildcard  `*` 
+    - search in all files and files in subdirectories with `-r` tag
+
+    Shell scripts are just a text file where we can store linux commands 
