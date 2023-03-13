@@ -65,7 +65,7 @@ Below I give a simplified version of Mercer's theorem, excluding some technical 
 Note that they assume at the start of that chapter that $X$ is assumed to be a compact subset of $\mathbb{R}^d$, and a Mercer Kernel is a continuous kernel.
 
 **Mercer's theorem:**  
-Let $K$ be a Mercer kernel on a compact subset $X$ of $\mathbb{R}^d$. Then there exists a countable collection of orthonormal continuous functions $\\{e_i\\}_{i=1}^{\infty}$ on $X$ and non-negative numbers $\\{\lambda_i\\}_{i=1}^{\infty}$ 
+Let $K$ be a Mercer kernel on a compact subset $X$ of $\mathbb{R}^d$. Then there exists a countable collection of orthonormal continuous functions $ \\{ e_i \\}_{i=1}^{\infty} $ on $X$ and non-negative numbers $ \\{\lambda_i \\}_{i=1}^{\infty}$ 
 such that:
 
 $$\begin{align*}
