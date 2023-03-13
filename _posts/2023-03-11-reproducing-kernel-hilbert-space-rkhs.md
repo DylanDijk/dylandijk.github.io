@@ -65,7 +65,7 @@ Below I give a simplified version of Mercer's theorem, excluding some technical 
 Note that they assume at the start of that chapter that $X$ is assumed to be a compact subset of $\mathbb{R}^d$, and a Mercer Kernel is a continuous kernel.
 
 **Mercer's theorem:**  
-Let $K$ be a Mercer kernel on a compact subset $X$ of $\mathbb{R}^d$. Then there exists a countable collection of orthonormal continuous functions $ \\{ e_i \\}_{i=1}^{\infty} $ on $X$ and non-negative numbers $ \\{\lambda_i \\}_{i=1}^{\infty}$ 
+Let $K$ be a Mercer kernel on a compact subset $X$ of $\mathbb{R}^d$. Then there exists a countable collection of orthonormal continuous functions $ \lbrace e_i \rbrace_{i=1}^{\infty} $ on $X$ and non-negative numbers $ \lbrace \lambda_i \rbrace_{i=1}^{\infty}$ 
 such that:
 
 $$\begin{align*}
@@ -82,7 +82,7 @@ Now a definition of a Kernel function is given by:
 
 ## Kernel Function
 
-A function $K: X \times X \rightarrow \mathbb{F}$  is a **kernel function** if there exists a Hilbert Space  $\mathcal{H}$ (not necessarily an RKHS) and a map $\phi : \mathcal{X} \rightarrow \mathcal{F}$, such that  $K(x, y) = \langle \phi(x), \phi(y) \rangle_{\mathcal{H}} \; \forall x, y \in X$
+A function $K: \mathcal{X}  \times \mathcal{X} \rightarrow \mathbb{F}$  is a **kernel function** if there exists a Hilbert Space  $\mathcal{H}$ (not necessarily an RKHS) and a map $\phi : \mathcal{X} \rightarrow \mathcal{H}$, such that  $K(x, y) = \langle \phi(x), \phi(y) \rangle_{\mathcal{H}} \; \forall x, y \in X$
 
 Note that every reproducing kernel is a kernel function, in that case the feature map is $\phi(x) = k_x$ and the feature space is the RKHS $\mathcal{H_k}$.
 
