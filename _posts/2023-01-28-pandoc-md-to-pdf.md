@@ -30,3 +30,5 @@ For example you could run:
 ```terminal
 $ pandoc --highlight-style=breezedark file-name.md -o file-name.pdf --pdf-engine=xelatex
 ```
+
+To add a table of contents add the `--toc` option.

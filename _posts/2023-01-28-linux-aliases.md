@@ -13,9 +13,11 @@ These are the aliases I am currently using:
 # custom aliases
 
 alias gs='git status'
-alias pers='cd Documents/Projects/Personal-webpage/dylandijk.github.io/'
-alias projs='cd Documents/Projects/'
+alias pers='cd /home/zl22291@bristol.ac.uk/Documents/Projects/Personal-webpage/dylandijk.github.io/'
+alias projs='cd /home/zl22291@bristol.ac.uk/Documents/Projects/'
 alias be='bundle exec'
-alias checkall='find . -name .git -type d -execdir git status \;'
+alias checkall='find . -name .git -type d -execdir sh -c '\''git status --porcelain | grep -q "^ M" && echo -e "\\033[0;31m${PWD}\\033[0m"'\'' \;'
+alias copypwd='pwd | xclip -sel clip'
+
 ```
 {: .nolineno file=".bashrc" }

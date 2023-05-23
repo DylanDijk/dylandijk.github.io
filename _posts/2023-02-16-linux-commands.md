@@ -2,6 +2,7 @@
 layout: post
 title: Linux Commands
 date: 2023-02-16 14:41 +0000
+tags: [Linux]
 ---
 
 Philosophy of using command line is that input and output files are files.
@@ -37,3 +38,11 @@ To view the flags for a command use `man` e.g `man ls`
     - search in all files and files in subdirectories with `-r` tag
 
     Shell scripts are just a text file where we can store linux commands 
+
+## Useful
+
+- Making google chrome the default application to open `.pdf` extensions, run in terminal:
+
+```bash
+xdg-mime default google-chrome.desktop application/pdf
+```
