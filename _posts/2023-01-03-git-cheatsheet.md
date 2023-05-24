@@ -91,3 +91,6 @@ You can revert a revert in the same way, by just using the commit code of the re
 - If you want to add all files apart from one file then can use the following: `git add --all -- ':!<filename>'` For example: `git add --all -- ':!R/get_create_features.R'`
 - You may have made changes that have not been committed, and then want to view exactly what these changes are. Running `git diff` shows which files have changes and which lines have been changed.
 	- You may see that some lines have been removed and added these are probably due to changes in spaces, to run git diff without taking into account white space you can run `git diff -w`.
+- You have made local changes that you realise are "bad" and you do not want to commit them
+  - Running `git reset --hard` will delete these changes and you will be in the state of your last commit. But note that all of that work will be deleted.
+  - Not specifying a commit will reset to the commit pointed to by `HEAD`.
