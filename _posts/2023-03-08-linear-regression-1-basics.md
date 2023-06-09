@@ -50,6 +50,14 @@ $$\begin{align}
     &= \prod_{i=1}^{n}{p(y_i \mid \mathbf{x}_i;\bw, \sigma)}
 \end{align}$$
 
+And therfore under the distributional assumption the log-likelihood is given by:
+
+$$\begin{align}
+  \log(p(y_1, \dots y_n \mid \mathbf{x}_1, \dots \mathbf{x}_n; \bw, \sigma)) = C + \frac{\sum_{i=1}^{n}{(y_i - f(\mathbf{x}_i;\bw))^2}}{2\sigma^2}
+\end{align}$$
+
+And hence the MLE of $\bw$ is given by solving the least squares problem.
+
 Alternatively, it can be sometimes be more easily thought of in the fixed design setting, where the covariates $x_i^0$ are fixed. And then we sample the $y_i$'s independently from the normal distribution $N(\alpha + \beta^T x_i^0, \sigma^2)$. 
 
 In that case we would just write the density as a function of the constants $\mathbf{x}_i$:

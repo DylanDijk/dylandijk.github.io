@@ -42,6 +42,7 @@ A [commit](https://github.com/cran-task-views/Pharmacokinetics/commit/f841bfaa39
   Further examples of commits made using suggestions from CTVsuggest:
   - [Commit](https://github.com/cran-task-views/ChemPhys/commit/05f4fe0d35f0e01ad11ebfe793fd8174dccb376f) titled: "many adds, including many from CTVsuggest" was made in the [ChemPhys](https://github.com/cran-task-views/ChemPhys/commit/05f4fe0d35f0e01ad11ebfe793fd8174dccb376f) Task View.
   - Commits made in Omics Task View: [1](https://github.com/cran-task-views/MissingData/commit/aa7f5b98069babaaceea4dc0a12642da2440011c), [2](https://github.com/cran-task-views/MissingData/commit/ec67663a91bae4a3d1afb8a8a38363ebee3b0144), [3](https://github.com/cran-task-views/MissingData/commit/66bc1e0a2ca65a42e5f677862e2eefa4bef7fc33).
+  - In the [Distributions](https://github.com/cran-task-views/Distributions) Task View, CTVsuggest has been [added to the workflow](https://github.com/cran-task-views/Distributions/commit/6439439cc76eee9d59065824c2607e8efb6c111c)
 
 </div>
 </details>
