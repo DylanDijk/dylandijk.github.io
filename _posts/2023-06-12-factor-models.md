@@ -44,4 +44,4 @@ $$
 An advantage of this formulation, is that statistical tests that test for the $k$ common factors are sufficient to describe the data (see [1.] section 9.5).
 
 With these additional probabilistic assumptions, the covariance parameters and loadings matrix can be derived via maximum likelihood estimation.
-I have previously created [these slides](https://github.com/DylanDijk/dylandijk.github.io/blob/main/assets/pdf/SM2_EM_Factor_Model.pdf), that give a brief description and provides the derivation of the EM steps (after the references).
+I have previously created [these slides](https://dylandijk.github.io/assets/pdf/SM2_EM_Factor_Model.pdf), that give a brief description and provides the derivation of the EM steps (after the references).
