@@ -87,6 +87,13 @@ You can revert a revert in the same way, by just using the commit code of the re
 	- After deciding on changes you just do the usual git add, git commit
 	- If you just wanted to cancel the git merge, then run `git merge --abort`.
 
+## Tags 
+
+- When releasing software it is useful to label a specific commit that is an important milestone in the project. For example, you may want to tag the commit that is the first release of the software to the public. 
+- To create a tag for a specific commit you run `git tag -a v1.0.0 74202f7 -m "message here"`. Where `v1.0.0` is the tag name, `74202f7` is the commit code and `-m` is the message. Use `git log --pretty=oneline` to view the commit codes.
+- To push the tag to the remote repo you run `git push origin v1.0.0`. Where `v1.0.0` is the tag name.
+- You can then use the tags to publish new releases on the GitHub repo.
+
 ## Useful Things
 - If you want to add all files apart from one file then can use the following: `git add --all -- ':!<filename>'` For example: `git add --all -- ':!R/get_create_features.R'`
 - You may have made changes that have not been committed, and then want to view exactly what these changes are. Running `git diff` shows which files have changes and which lines have been changed.
