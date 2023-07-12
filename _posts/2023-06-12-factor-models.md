@@ -7,6 +7,13 @@ math: true
 
 # Factor Models
 
+**Main references**:
+  1. [Multivariate analysis. Probability and
+mathematical statistics](https://shop.elsevier.com/books/multivariate-analysis/mardia/978-0-08-057047-1)
+  2.
+
+ ## Model description 
+
 The idea of a factor model is to represent each observed variable as a linear combination of some latent (not observed) factors, plus some noise. In particular, if we let $X$ be an $\mathbb{R}^p$ valued random variable, that represents the variables we observe. We then introduce, $F$, a $k$ dimensional random vector as the **factor**. We then assume that $X$ can be written as:
 
 $$\begin{align*}
@@ -24,10 +31,7 @@ Additional assumptions of this model are:
 
 And for the rest of this post, I will assume the data is centred, $\mathbb{E}(X) = 0$, i.e. $\mu = 0$.
 
-**Main references**:
-  1. [Multivariate analysis. Probability and
-mathematical statistics](https://shop.elsevier.com/books/multivariate-analysis/mardia/978-0-08-057047-1)
-  2. 
+
 
 ## Properties
 
@@ -55,6 +59,16 @@ X = \Lambda F + \xi = (\Lambda G) (G^T F) + \xi
 \end{align*}$$
 
 We now cover the estimation of the parameters $\Lambda$ and $\boldsymbol{\Psi}$, under two frameworks: the standard factor model and the normal linear factor model. In practice we observe a data matrix $X$ and we want to estimate the parameters using the data.
+
+## Relation to PCA
+
+If we just look at how the covariance matrix is decomposed in either model.  
+Let $\mathbf{\Gamma}_x$ denote the covariance matrix. 
+
+- PCA: $\quad \mathbf{\Gamma}_x = \mathbf{\Gamma}_{x_{[q]}} + \mathbf{\Gamma}_{\xi}$
+- FM : $\quad \mathbf{\Gamma}_x = \mathbf{\Lambda} \mathbf{\Lambda}^T + \mathbf{\Psi}$
+
+That is they are decomposed into a rank $q$ matrix plus another matrix. Where the representation used in PCA (no modelling assumptions), the additional matrix is not necessarily diagonal.
 
 
 
