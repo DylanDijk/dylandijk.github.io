@@ -86,6 +86,7 @@ You can revert a revert in the same way, by just using the commit code of the re
 - If there are conflicts I recommend opening the folder in **VScode**, so that you can visualise the conflicts.
 	- After deciding on changes you just do the usual git add, git commit
 	- If you just wanted to cancel the git merge, then run `git merge --abort`.
+- If there are conflicts with binary files, then can no longer fix with VScode. To keep changes of the branch that you are merging into, in this case the changes in branch 1, then run `git checkout --ours <filename>`. To keep changes of the branch that you are merging from, branch 2, then run `git checkout --theirs <filename>`. Then add and commit changes.
 
 ## Tags 
 
@@ -101,3 +102,5 @@ You can revert a revert in the same way, by just using the commit code of the re
 - You have made local changes that you realise are "bad" and you do not want to commit them
   - Running `git reset --hard` will delete these changes and you will be in the state of your last commit. But note that all of that work will be deleted.
   - Not specifying a commit will reset to the commit pointed to by `HEAD`.
+- File change keeps appearing in git status even though it has been added to `.gitignore`
+	- This is because the file has already been tracked by git. To stop tracking the file you need to run `git rm --cached <file>`. Then commit the changes.

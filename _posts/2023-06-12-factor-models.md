@@ -10,9 +10,9 @@ math: true
 **Main references**:
   1. [Multivariate analysis. Probability and
 mathematical statistics](https://shop.elsevier.com/books/multivariate-analysis/mardia/978-0-08-057047-1)
-  2.
 
- ## Model description 
+
+## Model description 
 
 The idea of a factor model is to represent each observed variable as a linear combination of some latent (not observed) factors, plus some noise. In particular, if we let $X$ be an $\mathbb{R}^p$ valued random variable, that represents the variables we observe. We then introduce, $F$, a $k$ dimensional random vector as the **factor**. We then assume that $X$ can be written as:
 
@@ -31,7 +31,7 @@ Additional assumptions of this model are:
 
 And for the rest of this post, I will assume the data is centred, $\mathbb{E}(X) = 0$, i.e. $\mu = 0$.
 
-
+The factor model with the assumption that $\text{Var}(F) = \boldsymbol{I}_k$ is often referred to as the **strict factor model**. 
 
 ## Properties
 
