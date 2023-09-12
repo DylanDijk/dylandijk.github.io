@@ -2,6 +2,7 @@
 layout: post
 title: PCA - Solution
 date: 2023-01-29 12:18 +0000
+math: true
 ---
 
 In a previous post we introduce PCA, and two equivalent objective definitions. In this post we now give the exact solutions to PCA.
