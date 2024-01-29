@@ -2,6 +2,7 @@
 layout: post
 title: Linear Algebra
 date: 2023-01-01 09:02 +0000
+math: true
 ---
 
 # Linear Algebra
@@ -35,8 +36,8 @@ The **Kernel** and **image** of a linear transformation are subspaces of the dom
 
  - A subset $U \subset V$ is a **basis** of $V$ if $U$ is linearly independent and $U$ spans $V$.
 
-	 - The basis of the vector space containing just the zero vector is $\empty$. This has no elements so the vector space containing jus the zero vector is zero.
-	 - The vector space  $K^n$  has a  standard basis: $\{\mathbf{e_1} = (1,0,\dots,0), \dots,\mathbf{e_n} = (0,\dots,0,1)\}$
+	 - The basis of the vector space containing just the zero vector is $\emptyset$. This has no elements so the vector space containing jus the zero vector is zero.
+	 - The vector space  $K^n$  has a  standard basis: $\\{\mathbf{e_1} = (1,0,\dots,0), \dots,\mathbf{e_n} = (0,\dots,0,1)\\}$
 where 1 denotes the multiplicative identity in $K$.
 	- With respect to a different basis, the same vector $\mathbf{v}$ will have different coordinates. A basis for a vector space can be thought of as a choice of a system of coordinates.
 
@@ -63,7 +64,7 @@ $T : U → V$ such that :
 
 Important to note that linear maps are only defined over the same field
 
-- Linear maps are uniquely determined by their action on a basis. i.e If we define a function that maps elements in a basis $S \subset V$ to $U$ then there exists a unique linear transformation such that the mapping of basis vectors as we defined it holds.
+- Linear maps are uniquely determined by their action on a basis. i.e If we define a function that maps elements in a basis $S \subset U$ to $V$ then there exists a unique linear transformation such that the mapping of basis vectors as we defined it holds.
 
 For vector spaces $U$,$V$ over a field $K$ we denote the set of all linear maps from $U$ to $V$ as $Hom_K(U, V )$.  
 The operations of scalar multiplication and addition on linear maps in the set $Hom_K(U, V )$ makes $Hom_K(U, V )$ into a vector space over $K$.
@@ -71,19 +72,21 @@ The operations of scalar multiplication and addition on linear maps in the set $
 ### One-to-one correspondence between linear maps and matrices
 For two vector spaces $U$ and $V$ over a field $K$, of dimension $n$ and $m$ respectively **then for a given choice of basis for each vector space** there is a one-to-one correspondence between linear maps $U \rightarrow V$ and matrices $K^{m,n}$.
 
-Given a linear map $U \rightarrow V$ and a choice of basis for each, $\{\mathbf{e_1, \dots, e_n}\}$ and $\{\mathbf{f_1, \dots, f_n}\}$. We can construct a matrix $A$, where the $i$th column is given as the coefficients of $T(e_i)$ with respect to the basis of $V$. 
+Given a linear map $U \rightarrow V$ and a choice of basis for each, $\\{\mathbf{e_1, \dots, e_n}\\}$ and $\\{\mathbf{f_1, \dots, f_n}\\}$. We can construct a matrix $A$, where the $i$th column is given as the coefficients of $T(e_i)$ with respect to the basis of $V$. 
 
 These coefficients are uniquely determined, and therefore the matrix is uniquely determined once we have a choice of basis for each vector space.
 
 On the otherhand if we are given a matrix $A$ this tells us what each element of the basis $U$ is mapped to. And we know that linear maps are uniquely determined by their action on a basis.
-***
-- For example the the identity map $I_V : V → V$ with $I_V (v) = v \quad \forall v ∈ V$ when we choose identical basis. Has corresponding matrix $A$, as constructed above, as the identity matrix with size given by the dimension of the vector space $V$. As the columns of $A$ will just be the 
+
 ***
 
-- Given $U$ and $V$ and respective basis, let $T$ be a linear map $U \rightarrow V$, and $A$ the matrix which represents $T$ w.r.t the chosen basis. Let the column vectors $\underline{\mathbf{u}} \in K^n$, $\underline{\mathbf{v}} \in$ be the coordinates of vectors $\mathbf{u} \in U$, $\mathbf{v} \in V$ to the chosen bases.
+- For example the the identity map $I_V : V → V$ with $I_V (v) = v \quad \forall v ∈ V$ when we choose identical basis. Has corresponding matrix $A$, as constructed above, as the identity matrix with size given by the dimension of the vector space $V$. As the columns of $A$ will just be a vector with a 1 in the corresponding position of the basis vector and 0s elsewhere.
+
+- Given $U$ and $V$ and respective basis, let $T$ be a linear map $U \rightarrow V$, and $A$ the matrix which represents $T$ w.r.t the chosen basis. Let the column vectors $\underline{\mathbf{u}} \in K^n$, $\underline{\mathbf{v}} \in$ be the coordinates of vectors $\mathbf{u} \in U$, $\mathbf{v} \in V$ w.r.t the chosen bases.
 Then  $\quad T(\mathbf{u}) = \mathbf{v} \iff A\underline{\mathbf{u}} = \underline{\mathbf{v}}$ 
 
-	-	If we have a basis $\{\mathbf{e_1}, \dots, \mathbf{e_n} \}$
+	-	If we use a standard bases for both the domain and codomain then the corrdinate vectors are just the vectors themselves. Therefore  
+	$T(\mathbf{u}) = \mathbf{v} \iff A\mathbf{u} = \mathbf{v}$
 
 
 ### Isomorphisms
@@ -100,27 +103,29 @@ Then  $\quad T(\mathbf{u}) = \mathbf{v} \iff A\underline{\mathbf{u}} = \underlin
 Outline of proof (helps with intuition):
 
 	-	($\Rightarrow$) 
-	Let $\{\mathbf{e_1}, \dots, \mathbf{e_n} \}$ be a basis for $U$, then $\{T(\mathbf{e_1}), \dots, T(\mathbf{e_n}) \}$ forms a basis of $V$.
+	Let $\\{\mathbf{e_1}, \dots, \mathbf{e_n} \\}$ be a basis for $U$, then $\\{T(\mathbf{e_1}), \dots, T(\mathbf{e_n}) \\}$ forms a basis of $V$.
 
 	-	($\Leftarrow$) 
 	The map $\quad e:U \rightarrow K^n \quad$ mapping the vectors of $U$ to their coordinates with respect to a chosen basis of $U$ is an isomorphism. 
 	Therefore any space of dimension $n$ is isomorphic to $K^n$, and by transitivity of isomorphisms all vector spaces of the same dimension are isomorphic to each other.
 
 From the outline of the proof can see that every vector space $U$ over $K$ of dimension $n$ is isomorphic to $K^n$.
+
 ***
 
 
 
 ## Rank of a matrix
 $T : U → V \quad$
-- **image** $\quad im(T) = \{T(\mathbf{u}) : \mathbf{u} \in U\}$
-- **kernel**  $\quad ker(T) = \{\mathbf{u} \in U\ : T(\mathbf{u}) = \mathbf{0}_v\}$
+- **image** $\quad im(T) = \\{T(\mathbf{u}) : \mathbf{u} \in U\\}$
+- **kernel**  $\quad ker(T) = \\{\mathbf{u} \in U\ : T(\mathbf{u}) = \mathbf{0}_v\\}$
 
 - **rank**   $\quad dim(im(T))$
 
- If $\;\ dim(U) = dim(V) = n \;$ then:
-$T$ is *bijective* $\iff$ $rank(T)=n$
+ If the vector spaces $U$ and $V$ have the same dimension $\, dim(U) = dim(V) = n \,$. Then we have the following statement:
 
+> $T$ is *bijective* $\iff$ $rank(T)=n$
+{: .prompt-info }
 
 
 
@@ -130,26 +135,34 @@ $im(T)$ is *spanned* by the vectors $T(\mathbf{e_1}),\dots,T(\mathbf{e_n})$. And
 Also if a vector space has dimension $n$ then any $n$ linearly independent vectors in that vector space is a basis and no $n+1$ vectors can be *linearly independent*.
 
 Therefore the rank of $T$ is the largest linearly independent subset of $T(\mathbf{e_1}),\dots,T(\mathbf{e_n})$.
+
 ***
+
 The **column space** of a matrix is the subspace of $K^{m,1}$(column vectors over field $K$) spanned by the columns $c_1, \dots , c_n$ of $A$. 
 The **column rank** of $A$ is equal to the dimension of the column space of $A$.
 
 
-- Let $U,V$ be vector spaces over the field $K$ with chosen bases $\mathbf{e},\mathbf{f}$, and $T$ a linear map $T:U \rightarrow V$.
+> Let $U,V$ be vector spaces over the field $K$ with chosen bases $\mathbf{e},\mathbf{f}$, and $T$ a linear map $T:U \rightarrow V$.
 Then the $rank(T)$ is equal to the column rank of the the matrix $A$ representing $T$ w.r.t our chosen bases. 
-**proof:**
+{: .prompt-tip }
 
-	-	Let $T'$ denote the linear map $T':K^n \rightarrow K^m$, defined by the matrix $A$.
-	-	$im(T'$) is equal to the column space of $A$, and therefore the $rank(T')$ equals the column rank of $A$
+**Proof:**
+
+Let $T'$ denote the linear map $T':K^n \rightarrow K^m$, defined by the matrix $A$.  
+$im(T'$) is equal to the column space of $A$, and therefore the $rank(T')$ equals the column rank of $A$.
 
 Now will show $rank(T')$ = $rank(T)$. As we will then have:
 column rank of A = $rank(T')$ = $rank(T)$
 
 The map $T'$ can be written as $f^{-1} \circ T \circ e^{-1}$, where $f^{-1}, e^{-1}$ are the  **isomorphisms** $f^{-1}: K^m \rightarrow U$, $e^{-1}: K^n \rightarrow U$ that map coordinates back to their vectors. 
 Isomorphisms preserve dimension and therefore $rank(T)$ equals $rank(T').$
+
 ***
 	
 - $rank$ of $T$ is the largest linearly independent subset of $T(\mathbf{e_1}),\dots,T(\mathbf{e_n})$.
+
+> The column and row rank of a matrix $A$ are equal. This is called the rank of $A$.
+{: .prompt-info }
 
 
 ## The inverse of a linear transformation and of a matrix
@@ -160,9 +173,8 @@ A function $f$, mapping from sets $X$ to $Y$ $f:X \rightarrow Y$ .
 - Has a left inverse $g$ if $g \circ f = I_X$, that is the left composition gives the identity map.
 - And has a right inverse $h$ if $f \circ h = I_X$
 
-Some functions have a **two-sided inverse**, a function that is both a left and right inverse.
+An inverse that is both a left and right inverse (a **two-sided inverse**), if it exists, must be unique. In fact, if a function has a left inverse and a right inverse, they are both the same two-sided inverse, so it can be called the inverse $f ^−$.
 - A function has a two-sided inverse if and only if it is bijective
-- If a function $f$ has a two-sided inverse then it is unique, so we call it ‘the’ inverse and write $f ^−$
 
 
 ***
@@ -171,26 +183,35 @@ Some functions have a **two-sided inverse**, a function that is both a left and 
 
 Let $T$ be a linear map $T:U \rightarrow V$, from the function recap above $T$ is invertible if $T^{-1}T = I_U$ and  $TT^{-1} = I_V$.  Also we can show that if a linear map has a two-sided inverse then that inverse is also linear.
 
-
 If we select a basis for $U$ and $V$ we can get our corresponding matrix $A \; (n \times m)$  for the linear map $T$. If $T$ is invertible then there exists $A^{-1}$ such that $AA^{-1} = I_n$ and  $A^{-1}A = I_m$. 
+
 ***
+
 If we were given a matrix $A$, and a left inverse and right inverse of that matrix they would have to be equal. As the existence of these matrices would imply that the corresponding function of $A$ has a left and right inverse. And if a function has a left inverse and a right inverse, they are both the same two-sided inverse. Therefore, the right and left inverse matrices must be equal.
 
 ***
 
-- If $T$ is invertible, then $dim(U) = dim(V )$, so only square matrices can be invertible. 
-**Proof**
-If any function *T* has a left and right inverse, then it must be a bijection.
-Hence $ker(T) = {0}$ and $im(T) = V$ , so $nullity(T) = 0$ and $rank(T) = dim(V ) = m$.
-But by the rank-nullity theorem, we have $n = dim(U) = rank(T) + nullity(T) = m + 0 = m$
+> If $T$ is invertible, then $dim(U) = dim(V ), \,$ so only square matrices can be invertible.
+{: .prompt-tip }
+
+**Proof:**
+
+If any function *T* has a left and right inverse, then it must be a bijection.  
+Hence $ker(T) = {0}$ and $im(T) = V$ , so $nullity(T) = 0$ and $rank(T) = dim(V ) = m$.  
+But by the rank-nullity theorem, we have $n = dim(U) = rank(T) + nullity(T) = m + 0 = m$.
 
 ***
-So we know that if $T$ is invertible then the dimension of the domain ($U$) and codomain ($V$) is equal, let this be $n$. 
+So we know that if $T$ is invertible then the dimension of the domain ($U$) and codomain ($V$) is equal, let this be $n.$  
 And if $T$ is invertible then the $im(T)$ is equal to $V$ therefore the $rank(T) = dim(V) = n$.  We also know that the rank of a linear map is equal to the rank of the corresponding matrix therefore the column rank of $A$ is equal to $n$.
 
 In summary if $A$ is invertible $\implies$ column rank of $A$ is equal to $n$.
 
-So if a matrix does not have full rank it cannot be invertible.
+Explicitly using what I we have written above:  
+$T$ is invertible $\iff$ $\, T$ is bijective $\iff$ $\, rank(T) = dim(U) = dim(V) = rank(A) \iff A \,$ is full rank.
+
+> $T$ is invertible $\iff$ corresponding matrix $A$ is full rank.
+{: .prompt-info }
+
 
 
 ## Change of basis and equivalent matrices
@@ -237,9 +258,11 @@ Two matrices are **similar** if and only if they represent the same linear map $
 - A projection is orthogonal if and only if it is **self-adjoint**/**symmetric**
 	- A self-adjoint matrix with real entries is called symmetric
 
-- If we have a vector space $V$ with subspace $U$, out of all projections with image $U$. The projection that minimises the distance from a point $v \in V$ to its projected element $u \in U$, is **the** orthogonal projection.
+> If we have a vector space $V$ with subspace $U$, out of all projections with image $U$. The projection that minimises the distance from a point $v \in V$ to its projected element $u \in U$, is **the** orthogonal projection.
+{: .prompt-tip }
 
-**Proof:**
+**Proof:**  
+
 Let $v \in V$ and $u \in U$ and $\pi()$ be the orthogonal projector. 
 By the Pythagorean theorem we have that:
 $||v - u||^2 = ||v - \pi(v)||^2 + ||\pi(v) - u||^2 \geq ||v - \pi(v)||^2$  

@@ -2,6 +2,7 @@
 layout: post
 title: Kernel PCA
 date: 2023-02-06 20:38 +0000
+math: true
 ---
 
 In traditional PCA, as shown in my [PCA post](https://dylandijk.github.io/posts/pca/#best-low-rank-approximation), we look for a **linear subspace** to project the data vectors onto orthogonally to provide a low dimensional representation of the data.

@@ -39,10 +39,11 @@ and it provided a list of several more packages that I was not aware of."
 A [commit](https://github.com/cran-task-views/Pharmacokinetics/commit/f841bfaa399e211edca71fdffee973b3ff5c5acc) was made.
 
   ***
-  Further examples of commits made using suggestions from CTVsuggest:
+  Further examples CTVsuggest being used for Task View maintenance:
   - [Commit](https://github.com/cran-task-views/ChemPhys/commit/05f4fe0d35f0e01ad11ebfe793fd8174dccb376f) titled: "many adds, including many from CTVsuggest" was made in the [ChemPhys](https://github.com/cran-task-views/ChemPhys/commit/05f4fe0d35f0e01ad11ebfe793fd8174dccb376f) Task View.
   - Commits made in Omics Task View: [1](https://github.com/cran-task-views/MissingData/commit/aa7f5b98069babaaceea4dc0a12642da2440011c), [2](https://github.com/cran-task-views/MissingData/commit/ec67663a91bae4a3d1afb8a8a38363ebee3b0144), [3](https://github.com/cran-task-views/MissingData/commit/66bc1e0a2ca65a42e5f677862e2eefa4bef7fc33).
   - In the [Distributions](https://github.com/cran-task-views/Distributions) Task View, CTVsuggest has been [added to the workflow](https://github.com/cran-task-views/Distributions/commit/6439439cc76eee9d59065824c2607e8efb6c111c)
+  - [Issue](https://github.com/cran-task-views/Hydrology/issues/141#issue-1702686855) in the Hydrology Task View agreeing with CTVsuggest suggestions.
 
 </div>
 </details>
