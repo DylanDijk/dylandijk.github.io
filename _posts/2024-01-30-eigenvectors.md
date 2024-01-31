@@ -14,7 +14,11 @@ math: true
 
 ## Positive definiteness
 
-- An $n \times n$ matrix $M$ is positive definite if $x^T M x > 0$ for all non-zero vectors $x \in \mathbb{R}^n$.
+- An $n \times n$ matrix $M$ is **positive definite** if $x^T M x > 0$ for all non-zero vectors $x \in \mathbb{R}^n$.
+- An $n \times n$ matrix $M$ is **positive semi-definite** if $x^T M x \geq 0$ for all non-zero vectors $x \in \mathbb{R}^n$.
+
+- Covariance matrices are positive semi-definite.  
+The quadratic form can be equal to zero if $\exists x \in \mathbb{R}^n$ such that $x^T (X - \mu) = 0$ a.s. In other words, if one of the random variables is a linear combination of the others.
 
 ## Cholesky decomposition
 
