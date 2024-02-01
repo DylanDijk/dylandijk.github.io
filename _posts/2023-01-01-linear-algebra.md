@@ -164,6 +164,10 @@ Isomorphisms preserve dimension and therefore $rank(T)$ equals $rank(T').$
 > The column and row rank of a matrix $A$ are equal. This is called the rank of $A$.
 {: .prompt-info }
 
+Another useful result for the rank of product of matrices
+> Let $A$ be an $m \times n$ matrix and $B$ an $n \times p$ matrix. Then $rank(AB) \leq min(rank(A), rank(B))$
+{: .prompt-info }
+
 
 ## The inverse of a linear transformation and of a matrix
 

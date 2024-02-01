@@ -56,11 +56,7 @@ To then merge these changes with your local repo you use `git pull` command.
 
 - You are in a detached head state when your `HEAD` is pointing at a commit and not a branch. [This video](https://www.youtube.com/watch?v=GN36mrrM12k) explains it well.
 ***
-### Renaming a file on local Git Repo
-[Instruction on GitHub](https://docs.github.com/en/repositories/working-with-files/managing-files/renaming-a-file#renaming-a-file-using-the-command-line)
-- use `git mv OLD-FILENAME NEW-FILENAME`
-- can also use this to move file to new folder
-- then commit changes
+
 
 
 
@@ -96,6 +92,13 @@ You can revert a revert in the same way, by just using the commit code of the re
 - You can then use the tags to publish new releases on the GitHub repo.
 
 ## Useful Things
+
+- Renaming a file on local Git Repo
+[Instruction on GitHub](https://docs.github.com/en/repositories/working-with-files/managing-files/renaming-a-file#renaming-a-file-using-the-command-line)
+  - use `git mv OLD-FILENAME NEW-FILENAME`
+  - can also use this to move file to new folder
+  - then commit changes
+
 - If you want to add all files apart from one file then can use the following: `git add --all -- ':!<filename>'` For example: `git add --all -- ':!R/get_create_features.R'`
 - You may have made changes that have not been committed, and then want to view exactly what these changes are. Running `git diff` shows which files have changes and which lines have been changed.
 	- You may see that some lines have been removed and added these are probably due to changes in spaces, to run git diff without taking into account white space you can run `git diff -w`.
