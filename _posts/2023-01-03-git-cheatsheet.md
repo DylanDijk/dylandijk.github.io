@@ -36,26 +36,21 @@ alias gs='git status'
  I can now just write `gs` in the linux terminal to run `git status`.
 
 ***
+
 - **origin** is an alias  _on your system_ for a **particular remote repository**. It's not actually a property of that repository.
 - A **remote repository** in Git, also called a **remote**, is a Git repository that's hosted on the Internet or another network
 - You can see what URL belongs to each remote by using: `git remote -v`
-
-
 
 - If there are changes on remote repo you can use `git fetch` command which downloads commits, files, and refs from a remote repository into your local repo. Fetching is what you do when you want to see what everybody else has been working on.
 To then merge these changes with your local repo you use `git pull` command.
 
 ***
+
 - `git restore --staged <file>`to remove files from staging area
 - `git restore --staged .` for all files in staging area
 
 ***
-- The `git checkout` command lets you navigate between the branches created by `git branch`. Checking out a branch updates the files in the working directory to match the version stored in that branch, and it tells Git to record all new commits on that branch. Think of it as a way to select which line of development you’re working on.
 
-- `HEAD` can be thought of as a pointer where commits are added to.
-
-- You are in a detached head state when your `HEAD` is pointing at a commit and not a branch. [This video](https://www.youtube.com/watch?v=GN36mrrM12k) explains it well.
-***
 
 
 
@@ -107,3 +102,10 @@ You can revert a revert in the same way, by just using the commit code of the re
   - Not specifying a commit will reset to the commit pointed to by `HEAD`.
 - File change keeps appearing in git status even though it has been added to `.gitignore`
 	- This is because the file has already been tracked by git. To stop tracking the file you need to run `git rm --cached <file>`. Then commit the changes.
+
+- The `git checkout` command lets you navigate between the branches created by `git branch`. Checking out a branch updates the files in the working directory to match the version stored in that branch, and it tells Git to record all new commits on that branch. Think of it as a way to select which line of development you’re working on.
+
+- `HEAD` can be thought of as a pointer where commits are added to.
+
+- You are in a detached head state when your `HEAD` is pointing at a commit and not a branch. [This video](https://www.youtube.com/watch?v=GN36mrrM12k) explains it well.
+
