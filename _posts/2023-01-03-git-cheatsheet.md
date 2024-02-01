@@ -37,36 +37,40 @@ alias gs='git status'
 
 ***
 
+## Terminology
+
 - **origin** is an alias  _on your system_ for a **particular remote repository**. It's not actually a property of that repository.
 - A **remote repository** in Git, also called a **remote**, is a Git repository that's hosted on the Internet or another network
-- You can see what URL belongs to each remote by using: `git remote -v`
+	- You can see what URL belongs to each remote by using: `git remote -v`
+- `HEAD` can be thought of as a pointer where commits are added to.
+- You are in a **detached head state** when your `HEAD` is pointing at a commit and not a branch. [This video](https://www.youtube.com/watch?v=GN36mrrM12k) explains it well.
 
+## Common commands
 - If there are changes on remote repo you can use `git fetch` command which downloads commits, files, and refs from a remote repository into your local repo. Fetching is what you do when you want to see what everybody else has been working on.
 To then merge these changes with your local repo you use `git pull` command.
 
-***
-
-- `git restore --staged <file>`to remove files from staging area
-- `git restore --staged .` for all files in staging area
-
-***
-
-
-
-
 
 ## Going back to previous commit
-- `git revert a867b4af` Where the code here is the commit you want to revert.
-With Git, revert has a very specific meaning: create a commit with the reverse patch to cancel it out. This way you don't rewrite any history.
-You can revert a revert in the same way, by just using the commit code of the revert.
-- `git revert --no-commit` to revert but not commit. Can then do `git commit -m " "`.
-- Can revert multiple commits see [here](https://stackoverflow.com/questions/1463340/how-can-i-revert-multiple-git-commits/1470452#1470452).
-- To get commit codes can use `git log .` to view all commits.
+
+- You have made a commit, but realised its bad and you want to go back to state of previous commit.
+	- `git revert` will create a commit that you can think of as the inverse of the previous commit. This is useful as it brings you back to the state of the previous commit, whilst retaining the history of the bad commit.
+	- `git revert a867b4af`  
+	Where the code here is the commit you want to revert.
+	You can revert a revert in the same way, by just using the commit code of the revert.
+	- `git revert --no-commit` to revert but not commit. Can then do `git commit -m " "`.
+	- Can revert multiple commits see [here](https://stackoverflow.com/questions/1463340/how-can-i-revert-multiple-git-commits/1470452#1470452).
+	- To get commit codes can use `git log .` to view all commits.  
+	`git log --pretty=oneline` to view all commits in one line.
+
+- You want to **view** the state of previous commit but not to go back to it permanently.
+	- `git checkout a867b4af`  
+	Where the code here is the commit you want to view.
+	
 
 ## Branches
 - list local branches `git branch`
 - list remote branches with `git branch -r`
--  create a new branch `git checkout -b your_new_branch`
+- create a new branch `git checkout -b your_new_branch`
 - Can create new branch then go back to original branch and then revert changes look [here](https://stackoverflow.com/questions/2816715/branch-from-a-previous-commit-using-git/31783383#31783383) but use git revert instead of `git reset`.
 - `git branch -vv` to view all tracking branches
 - After merging a branch you may want to delete it, you can do this with  `git branch -d <Branch Name>`. This deletes the local branch.
@@ -105,7 +109,5 @@ You can revert a revert in the same way, by just using the commit code of the re
 
 - The `git checkout` command lets you navigate between the branches created by `git branch`. Checking out a branch updates the files in the working directory to match the version stored in that branch, and it tells Git to record all new commits on that branch. Think of it as a way to select which line of development you’re working on.
 
-- `HEAD` can be thought of as a pointer where commits are added to.
 
-- You are in a detached head state when your `HEAD` is pointing at a commit and not a branch. [This video](https://www.youtube.com/watch?v=GN36mrrM12k) explains it well.
 
