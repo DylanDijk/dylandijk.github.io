@@ -50,7 +50,7 @@ alias gs='git status'
 To then merge these changes with your local repo you use `git pull` command.
 
 
-## Going back to previous commit
+## Going back
 
 - You have made a commit, but realised its bad and you want to go back to state of previous commit.
 	- `git revert` will create a commit that you can think of as the inverse of the previous commit. This is useful as it brings you back to the state of the previous commit, whilst retaining the history of the bad commit.

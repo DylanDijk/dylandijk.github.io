@@ -4,7 +4,7 @@ title: Multi-label classification
 date: 2023-09-12 12:09 +0000
 math: true
 tags: [ML]
-categories: [Statisitcs, Machine Learning]
+categories: [Statistics, Machine Learning]
 ---
 
 # Multi-label classification
