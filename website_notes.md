@@ -1,5 +1,11 @@
 # Notes for building website
 
+
+- To build website locally run in terminal: `bundle exec jekyll s`
+
+***
+
+
 I am writing important parts of the workflow of the website building process.  
 
 Main things:
