@@ -55,4 +55,5 @@ $$
 Recall &= \frac{\text{Correct predictions for the postive class}}{\text{Total actual positive class observations}} \\[1em]
  &= \frac{TP}{TP+FN}
 \end{align*}
+$$
 
