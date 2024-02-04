@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linear Regression 1 - Basics
+title: Linear Regression
 date: 2023-03-08 11:29 +0000
 categories: [Statistics, Regression]
 tags: [ML, Statistics, Linear Regression] 
@@ -25,7 +25,7 @@ I emphasise that the error terms $\epsilon_i$ are the only **random** part on th
 The objective is to estimate the parameters $\alpha$ and $\beta$, and the standard approach is to use the **least squares** estimator:
 
 $$\begin{align*}
-(\hat{\alpha}, \hat{\beta}) := \underset{\alpha, \beta}{\argmin}||Y^0 - (\alpha + \mathbf{X}^0 \beta)||_2^2
+(\hat{\alpha}, \hat{\beta}) := \underset{\alpha, \beta}{\argmin}||Y^0 - (\alpha \mathbf{1} + \mathbf{X}^0 \beta)||_2^2
 \end{align*}$$
 
 Here we are using the usual convention, that a real number added to a vector we add it to each element of the vector.
@@ -71,6 +71,71 @@ In that case we would just write the density as a function of the constants $\ma
 ***
 
 ## Estimation
+
+From the objective:
+$$\begin{align*}
+(\hat{\alpha}, \hat{\beta}) := \underset{\alpha, \beta}{\argmin}||Y^0 - (\alpha \mathbf{1} + \mathbf{X}^0 \beta)||_2^2
+\end{align*}$$
+
+
+
+
+
+We have the OLS solutions:  
+
+$$
+\begin{align*}
+\hat{\alpha} &= \bar{Y}^0 - \hat{\beta}^T \bar{X}^0
+\end{align*}
+$$
+
+<details>
+
+  <summary markdown="span" style="color:#4863A0">Proof:</summary>
+<div markdown="1">
+
+- Solution for intercept $\alpha$:
+
+$$\begin{align*}
+||Y^0 - (\alpha + \mathbf{X}^0 \beta)||_2^2 = (Y^0 - (\alpha \mathbf{1} + \mathbf{X}^0 \beta))^T(Y^0 - (\alpha \mathbf{1} + \mathbf{X}^0 \beta)) \\
+= (Y^0)^T Y^0 - 2(Y^0)^T(\alpha \mathbf{1} + \mathbf{X}^0 \beta) + (\alpha \mathbf{1} + \mathbf{X}^0 \beta)^T(\alpha \mathbf{1} + \mathbf{X}^0 \beta) 
+\end{align*}$$
+
+Minimising w.r.t to the constant $\alpha$, so just looking at terms that depend on $\alpha$:
+
+$$\begin{align*}
+\frac{\partial}{\partial \alpha} - \alpha (Y^0)^T \mathbf{1} + \alpha (\mathbf{1}^T \mathbf{1}) \alpha + 2\beta^T \mathbf{X}^0 \alpha \mathbf{1} \\
+= -2(Y^0)^T \mathbf{1} + 2\alpha n + 2\beta^T \mathbf{X}^0 \mathbf{1}
+\end{align*}$$
+
+Setting to zero gives:
+
+$$\begin{align*}
+\hat{\alpha} &= \frac{1}{n}\left[\left(\sum_{i = 1}^{n}Y_i^0 - \left(\sum_{i = 1}^{n}(x_i^0)^T \beta \right) \right)\right] \\
+&= \bar{Y}^0 - \bar{X}^0 \beta
+\end{align*}$$
+
+Where $\bar{X}^0$ is the mean row vector of the design matrix. Hence plugging $\hat{\alpha}$ back into the objective gives:
+
+$$
+\begin{align*}
+Y^0 - (\hat{\alpha} \mathbf{1} + \mathbf{X}^0 \beta) = (Y^0 - (\bar{Y}^0 \mathbf{1} - (\bar{X}^0 \beta)\mathbf{1} + \mathbf{X}^0 \beta)) \\
+= (Y^0 - \bar{Y}^0 \mathbf{1}) - (\mathbf{X}^0 - \bar{X}^0 \mathbf{1})\beta \\
+= (Y -\mathbf{X} \beta)
+\end{align*}
+$$
+
+Where $Y$ and $\mathbf{X}$ are the centered response variable and design matrix respectively.  
+
+
+- Solution for intercept $\beta$:
+
+
+
+
+***
+</div>
+</details>
 
 $$\begin{align*}
 \hat{\alpha} &= \bar{Y}^0 - \hat{\beta}^T \bar{X}^0 \\
