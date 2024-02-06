@@ -161,11 +161,17 @@ Isomorphisms preserve dimension and therefore $rank(T)$ equals $rank(T').$
 	
 - $rank$ of $T$ is the largest linearly independent subset of $T(\mathbf{e_1}),\dots,T(\mathbf{e_n})$.
 
-> The column and row rank of a matrix $A$ are equal. This is called the rank of $A$.
+> The column and row rank of a matrix $A$ are equal. This is called the rank of $A$. A matrix is **full rank** if its rank is the highest possible for a matrix of the same size.
 {: .prompt-info }
 
-Another useful result for the rank of product of matrices
+Other useful results about the rank of matrices:
 > Let $A$ be an $m \times n$ matrix and $B$ an $n \times p$ matrix. Then $rank(AB) \leq min(rank(A), rank(B))$
+{: .prompt-info }
+
+> Let $A$ be an $m \times n$ matrix, then $rank(A^TA) = rank(A)$
+{: .prompt-info }
+
+> Orthogonal matrices are full rank.
 {: .prompt-info }
 
 

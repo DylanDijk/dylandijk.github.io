@@ -83,9 +83,9 @@ $$\begin{align*}
 
 We have the OLS solutions:  
 
-$$
-\begin{align*}
-\hat{\alpha} &= \bar{Y}^0 - \hat{\beta}^T \bar{X}^0
+$$\begin{align*}
+\hat{\alpha} &= \bar{Y}^0 - \hat{\beta}^T \bar{X}^0 \\
+\hat{\beta} &= (X^TX)^{-1}X^TY 
 \end{align*}
 $$
 
@@ -137,10 +137,7 @@ Where $Y$ and $\mathbf{X}$ are the centered response variable and design matrix 
 </div>
 </details>
 
-$$\begin{align*}
-\hat{\alpha} &= \bar{Y}^0 - \hat{\beta}^T \bar{X}^0 \\
-\hat{\beta} &= (X^TX)^{-1}X^TY 
-\end{align*}$$
+
 
 Under the model setup we have that, $\mathbb{E}(Y^0) = \alpha + \mathbf{X}^0 \beta$.  
 Therefore the OLS estimate $\hat{\mu}^0$ of  $\mathbb{E}(Y^0)$ is given by $\hat{\mu}^0 = \hat{\alpha} + \mathbf{X}^0 \hat{\beta}$.
