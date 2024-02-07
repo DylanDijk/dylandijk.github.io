@@ -2,6 +2,7 @@
 
 
 - To build website locally run in terminal: `bundle exec jekyll s`
+- To add a post that comes up on the home page run `bundle exec jekyll post "My New Post"`
 
 ***
 

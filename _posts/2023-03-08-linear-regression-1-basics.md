@@ -10,7 +10,7 @@ math: true
 In this post I will describe the setup of linear regression, and main results.  
 I will be looking at the **fixed design setting**, which is where we assume that the covariates $x_i^0$ are fixed, and then model the outcome variable $Y_i^0$ as a linear function of the covariates plus some **random error** $\epsilon_i$.
 
-Throughout I will be deonting the uncentered response variable vector by $Y^0$, and the uncentered design matrix by $\mathbf{X}^0$. The centred versions will be denoted by $Y$ and $\mathbf{X}$ respectively, where $\mathbf{X}$ has been centred column wise.
+Throughout I will be denoting the uncentered response variable vector by $Y^0$, and the uncentered design matrix by $\mathbf{X}^0$. The centred versions will be denoted by $Y$ and $\mathbf{X}$ respectively, where $\mathbf{X}$ has been centred column wise.
 
 ***
 
@@ -182,6 +182,10 @@ $$
 
 In words, under the assumptions:  
 - $\mathbb{E}(\mathbf{\epsilon}) = 0$
-- $Var(\mathbf{\epsilon}) = \sigma^2 I$  
+- $Var(\mathbf{\epsilon}) = \sigma^2 I$, uncorrelated and homoscedastic errors.
 
 The OLS estimator $\hat{\beta}$ is the best linear unbiased estimator (BLUE) of $\beta$. Where by best we mean it has the lowest variance.
+
+
+## Intervals and Testing
+
