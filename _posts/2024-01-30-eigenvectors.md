@@ -7,10 +7,25 @@ math: true
 
 # Linear Algebra - Eigenvectors
 
-**references**:
-  1. Choleski decompostion - [blog post](https://www.statlect.com/matrix-algebra/Cholesky-decomposition) - [notes](https://www.stat.uchicago.edu/~lekheng/courses/302/notes8.pdf)
+## Singular values
 
-***
+**Singular values** of a matrix $A$, are the square roots of the eigenvalues of $A^TA$
+
+If $A$ is symmetric the eigenvalues of $A^TA$ are the squared eigenvalues of $A$.
+
+<details>
+    <summary markdown="span" style="color:#4863A0">Proof</summary>
+<div markdown="1">
+
+$$\begin{align*}
+Ax &= \lambda x \\
+A^TAx &= AAx = \lambda Ax = \lambda^2 x
+\end{align*}$$
+
+</div>
+</details>
+
+Therefore the singular values of a symmetric matrix are the absolute values of its eigenvalues.
 
 ## Positive definiteness
 
@@ -20,9 +35,6 @@ math: true
 - Covariance matrices are positive semi-definite.  
 The quadratic form can be equal to zero if $\exists x \in \mathbb{R}^n$ such that $x^T (X - \mu) = 0$ a.s. In other words, if one of the random variables is a linear combination of the others.
 
-## Cholesky decomposition
-
-- Cholesky decomposition exists $\iff$ $M$ is symmetric and positive definite.
 
 
 

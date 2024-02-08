@@ -2,6 +2,8 @@
 layout: post
 title: PCA - Solution
 date: 2023-01-29 12:18 +0000
+categories: [Statistics, Dimensionality Reduction]
+tags: [ML, Statistics, PCA] 
 math: true
 ---
 
@@ -13,9 +15,13 @@ $$
 \begin{align*} \underset{V \in \mathbb{R}^{p \times d}}{\text{argmax}} \quad &\text{Tr}(V^TSV) \\ &\text{s.t} \quad V^TV = I_d \end{align*}
 $$
 
-Where $S = \frac{X^TX}{n-1}$ is the sample covariance matrix.
+Where $S = \frac{X^TX}{n}$ is the sample covariance matrix.
 
-***
+The solution to this objective is to set the columns of $V$, the **PC loadings**, to be the eigenvectors of $S$ corresponding to the $d$ largest eigenvalues. 
+
+
+
+
 
 **Theorem**  $\quad$ Spectral Decomposition.  
 Let $A$ be a symmetric matrix, then $A$ admits the following decomposition:

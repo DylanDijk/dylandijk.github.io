@@ -1,11 +1,14 @@
 ---
 layout: post
-title: Linear Algebra
+title: Linear Algebra Foundations
 date: 2023-01-01 09:02 +0000
 math: true
 ---
 
 # Linear Algebra
+
+**References**:  
+Linear algebra - [lecture notes](https://dylandijk.github.io/assets/pdf/MA106LAnotes.pdf)
 
 ## Fields
 A **field** is a set $S$ with two binary operations (a map from $S \times S$ to $S$ ): Addition and Multiplication.
@@ -39,7 +42,7 @@ The **Kernel** and **image** of a linear transformation are subspaces of the dom
 	 - The basis of the vector space containing just the zero vector is $\emptyset$. This has no elements so the vector space containing jus the zero vector is zero.
 	 - The vector space  $K^n$  has a  standard basis: $\\{\mathbf{e_1} = (1,0,\dots,0), \dots,\mathbf{e_n} = (0,\dots,0,1)\\}$
 where 1 denotes the multiplicative identity in $K$.
-	- With respect to a different basis, the same vector $\mathbf{v}$ will have different coordinates. A basis for a vector space can be thought of as a choice of a system of coordinates.
+	- With respect to a different basis, the same vector $\mathbf{v}$ will have different coordinates. **A basis for a vector space can be thought of as a choice of a system of coordinates.**
 
  
 
@@ -232,6 +235,11 @@ With the matrix $P$  we have that $P\underline{\mathbf{v}} = \underline{\mathbf{
 Therefore $P$ can be seen as the matrix which turns a vector’s coordinates with respect to the “old” basis into the same vector’s coordinates with respect to the “new” basis.
 
 - The change of basis matrix is invertible with the inverse matrix corresponding to the choice of basis being switched.
+
+In fact:  
+> A matrix is a change of basis matrix $\iff$
+it is invertible
+{: .prompt-info }
 
 ***
  If we have a linear map $T:U \rightarrow V$ and two different pairs of basis for the domain and codomain $\mathbf{e},\mathbf{f}$ and $\mathbf{e'},\mathbf{f'}$. Represented by the matrices $A$ and $B$ respectively then we have that $B=QAP^{-1}$.

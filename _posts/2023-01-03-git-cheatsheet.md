@@ -52,7 +52,7 @@ To then merge these changes with your local repo you use `git pull` command.
 
 ## Going back
 
-- You have made a commit, but realised its bad and you want to go back to state of previous commit.
+- You have made a commit, but realised its bad and you want to go back to state of previous commit **permanently**.
 	- `git revert` will create a commit that you can think of as the inverse of the previous commit. This is useful as it brings you back to the state of the previous commit, whilst retaining the history of the bad commit.
 	- `git revert a867b4af`  
 	Where the code here is the commit you want to revert.

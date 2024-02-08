@@ -1,8 +1,8 @@
 # Notes for building website
 
 
-- To build website locally run in terminal: `bundle exec jekyll s`
-- To add a post that comes up on the home page run `bundle exec jekyll post "My New Post"`
+- To build website locally run in terminal: `be jekyll s`
+- To add a post that comes up on the home page run `be jekyll post "My New Post"`
 
 ***
 

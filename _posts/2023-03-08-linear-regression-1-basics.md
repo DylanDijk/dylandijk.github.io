@@ -12,6 +12,9 @@ I will be looking at the **fixed design setting**, which is where we assume that
 
 Throughout I will be denoting the uncentered response variable vector by $Y^0$, and the uncentered design matrix by $\mathbf{X}^0$. The centred versions will be denoted by $Y$ and $\mathbf{X}$ respectively, where $\mathbf{X}$ has been centred column wise.
 
+**References:**  
+1. [Lecture notes](https://mfasiolo.github.io/TOI/notes.pdf) - Chapter 3
+
 ***
 
 ## Model Setup
@@ -141,6 +144,13 @@ Where $Y$ and $\mathbf{X}$ are the centered response variable and design matrix 
 </div>
 </details>
 
+Least squares looks for $\beta$ that minimises the least squares distance, from $Y$ to a point in the column span of the design matrix $\mathbf{X}$. Therefore $\beta$ is chosen such that $Y$ is orthogonally projected on to the column space of $\mathbf{X}$. Recalling that the matrix that orthogonaly projects vectors onto the column space of a matrix $\mathbf{X}$ is the projection matrix:
+
+$$
+\mathbf{X}(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T
+$$
+
+***
 
 ### Unbiased
 
@@ -188,4 +198,58 @@ The OLS estimator $\hat{\beta}$ is the best linear unbiased estimator (BLUE) of 
 
 
 ## Intervals and Testing
+
+In order to carry out testing and construct confidence intervals, we additionally assume that:  
+
+$$
+\begin{align*}
+\epsilon \sim N(0, \sigma^2 I)
+\end{align*}
+$$
+
+Under this assumption we then have that:
+
+$$
+\begin{align*}
+\hat{\beta} \sim N(\beta, \sigma^2 (\mathbf{X}^T\mathbf{X})^{-1})
+\end{align*}
+$$
+
+Therefore in order to have a pivotal quantity we require an estimate of the variance of the errors $\sigma^2$. 
+
+An unbiased estimator of $\sigma^2$:
+
+$$
+\begin{align*}
+\hat{\sigma}^2 = \frac{\|Y - X\hat{\beta}\|^2}{n - p}
+\end{align*}
+$$
+
+and therefore an unbiased estimator of the variance of $\hat{\beta}$:
+
+$$
+\begin{align*}
+\hat{\sigma}^2 (\mathbf{X}^T\mathbf{X})^{-1}
+\end{align*}
+$$
+
+it can then be shown that:
+
+$$
+\begin{align*}
+\frac{\hat{\beta_i} - \beta_i}{\hat{\sigma}_{\hat{\beta}_i}} \sim t_{n-p}
+\end{align*}
+$$
+
+and then this can be used to construct confidence intervals and carry out hypothesis tests.
+
+>An important thing to note is that when carrying out linear regression in practice, in R for example, the estimators listed above are computed using the QR decomposition of the design matrix, which is more numerically stable. 
+{: .prompt-info }
+
+- variance estimator
+- Coefficient t-statistic distribution
+  - Confidence intervals
+  - test
+
+- Prediction intervals
 
