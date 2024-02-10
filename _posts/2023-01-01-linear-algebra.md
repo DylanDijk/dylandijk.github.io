@@ -171,7 +171,7 @@ Other useful results about the rank of matrices:
 > Let $A$ be an $m \times n$ matrix and $B$ an $n \times p$ matrix. Then $rank(AB) \leq min(rank(A), rank(B))$
 {: .prompt-info }
 
-> Let $A$ be an $m \times n$ matrix, then $rank(A^TA) = rank(A)$
+> Let $A$ be an $m \times n$ matrix, then $rank(A^TA) = rank(AA^T) = rank(A)$
 {: .prompt-info }
 
 > Orthogonal matrices are full rank.

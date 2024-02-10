@@ -8,7 +8,7 @@ math: true
 ---
 
 In this post I will describe the setup of linear regression, and main results.  
-I will be looking at the **fixed design setting**, which is where we assume that the covariates $x_i^0$ are fixed, and then model the outcome variable $Y_i^0$ as a linear function of the covariates plus some **random error** $\epsilon_i$.
+I will be looking at the **fixed design setting**, which is where we assume that the covariates $x_i^0$ are fixed, and then model the outcome variable $y_i^0$ as a linear function of the covariates plus some **random error** $\epsilon_i$.
 
 Throughout I will be denoting the uncentered response variable vector by $Y^0$, and the uncentered design matrix by $\mathbf{X}^0$. The centred versions will be denoted by $Y$ and $\mathbf{X}$ respectively, where $\mathbf{X}$ has been centred column wise.
 
@@ -20,7 +20,7 @@ Throughout I will be denoting the uncentered response variable vector by $Y^0$, 
 ## Model Setup
 
 $$\begin{align*}
-Y_i^0 = \alpha + \beta^T x_i^0 + \epsilon_i, \quad i = 1, \dots, n 
+y_i^0 = \alpha + \beta^T x_i^0 + \epsilon_i, \quad i = 1, \dots, n 
 \end{align*}$$
 
 So far I will not make any assumptions about the distribution of the errors $\epsilon_i$. But will makes these clear when making statements about inference and estimation.
@@ -37,7 +37,7 @@ Here we are using the usual convention, that a real number added to a vector we 
 
 
 ***
-This least squares loss function can be motivated by assuming that the outcome variables $Y_i^0$, conditional on the predictors $x_i^0$, are independent samples from the normal distribution $N(\alpha + \beta^T x_i^0, \sigma^2)$. This assumption can be equivalently made, by assuming the errors $\epsilon_i$ are i.i.d samples from the normal distribution $N(0, \sigma^2)$.
+This least squares loss function can be motivated by assuming that the outcome variables $y_i^0$, conditional on the predictors $x_i^0$, are independent samples from the normal distribution $N(\alpha + \beta^T x_i^0, \sigma^2)$. This assumption can be equivalently made, by assuming the errors $\epsilon_i$ are i.i.d samples from the normal distribution $N(0, \sigma^2)$.
 
 What I mean by motivated, is that the MLE of $\alpha$ and $\beta$, under this probabilistic assumption is equivalent to the least squares estimator.  
 
@@ -118,7 +118,7 @@ $$\begin{align*}
 Setting to zero gives:
 
 $$\begin{align*}
-\hat{\alpha} &= \frac{1}{n}\left[\left(\sum_{i = 1}^{n}Y_i^0 - \left(\sum_{i = 1}^{n}(x_i^0)^T \beta \right) \right)\right] \\
+\hat{\alpha} &= \frac{1}{n}\left[\left(\sum_{i = 1}^{n}y_i^0 - \left(\sum_{i = 1}^{n}(x_i^0)^T \beta \right) \right)\right] \\
 &= \bar{Y}^0 - \bar{X}^0 \beta
 \end{align*}$$
 
@@ -199,6 +199,7 @@ The OLS estimator $\hat{\beta}$ is the best linear unbiased estimator (BLUE) of 
 
 ## Intervals and Testing
 
+### Model parameters
 In order to carry out testing and construct confidence intervals, we additionally assume that:  
 
 $$
@@ -246,10 +247,60 @@ and then this can be used to construct confidence intervals and carry out hypoth
 >An important thing to note is that when carrying out linear regression in practice, in R for example, the estimators listed above are computed using the QR decomposition of the design matrix, which is more numerically stable. 
 {: .prompt-info }
 
-- variance estimator
-- Coefficient t-statistic distribution
-  - Confidence intervals
-  - test
 
-- Prediction intervals
+### Prediction intervals
+
+There are two types of prediction intervals that may want to be estimated. The **prediction of a new observation** given a feature vector $x$, and the **prediction of the mean response** given a feature vector $x$.
+
+This stack exchange [answer](https://stats.stackexchange.com/questions/16493/difference-between-confidence-intervals-and-prediction-intervals) explains the difference. 
+
+
+***
+
+**predicting a new response**:
+
+When predicting a new response we need to take into account the variance associated with estimating $\beta$ and then the variance the error $\epsilon$ in our model. And we assume that the error is independent of $\hat{\beta}$, that is can think of getting our expected response:
+
+$$
+\begin{align*}
+\hat{\beta}^T x
+\end{align*}
+$$
+
+and then the response that we do not observe will be: 
+
+$$
+\begin{align*}
+\tilde{y} = \hat{\beta}^T x + \epsilon
+\end{align*}
+$$
+
+for some additional independent error.
+
+We therefore have that:
+
+$$
+\begin{align*}
+\tilde{y} \sim N({\beta}^T x \, , \sigma^2(1 + x^T(\mathbf{X}^T\mathbf{X})^{-1}x) \, )
+\end{align*}
+$$
+
+and similart the t-statistic for the coefficents, we have the following t-statistic for the prediction of a **new response**:
+
+$$
+\begin{align*}
+\frac{\tilde{y} - \hat{\beta}^T x}{\hat{\sigma}\sqrt{1 + x^T(\mathbf{X}^T\mathbf{X})^{-1}x}} \sim t_{n-p}
+\end{align*}
+$$
+
+hence we can construct the following prediction interval:
+
+$$
+\begin{align*}
+x^T\hat{\beta} \pm t_{n-p}(\alpha) \hat{\sigma}\sqrt{1 + x^T(\mathbf{X}^T\mathbf{X})^{-1}x}
+\end{align*}
+$$
+
+Then for the mean response confidence interval we just remove the plus 1 that appears in the variance.
+
 
