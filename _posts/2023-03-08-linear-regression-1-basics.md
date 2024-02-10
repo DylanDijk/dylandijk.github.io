@@ -196,6 +196,32 @@ In words, under the assumptions:
 
 The OLS estimator $\hat{\beta}$ is the best linear unbiased estimator (BLUE) of $\beta$. Where by best we mean it has the lowest variance.
 
+### Scaling 
+
+A quick note on scaling in linear regression.  
+If you scale the $i\text{th}$ variable, i.e the $i\text{th}$ column of $\mathbf{X}$:  
+$$
+\begin{align*}
+a*x_{(i)}
+\end{align*}
+$$
+
+then, the reverse scaling is applied to the $i\text{th}$ coefficient $\beta_i$:  
+$$
+\begin{align*}
+\frac{\hat{\beta}_i}{a}
+\end{align*}
+$$
+
+if you scale the response variable $Y$ by a factor $a$, then the coefficients are scaled by the same factor.
+$$
+\begin{align*}
+\hat{\beta}_i * a
+\end{align*}
+$$
+
+These can boths shown easily using the OLS solution $\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^TY$.
+
 
 ## Intervals and Testing
 
