@@ -94,7 +94,13 @@ $$\begin{align*}
 \end{align*}
 $$
 
-Can see that $\hat{\beta}$ is a linear function of the response variable $Y$.
+Can see that $\hat{\beta}$ is a linear function of the response variable $Y$. Also can see that if an intercept term is included in the model then the objective is equaivalent to solving:
+
+$$\begin{align*}
+\hat{\beta} = \argmin_{\beta}||Y - \mathbf{X} \beta||_2^2
+\end{align*}$$
+  
+where $Y$ and $\mathbf{X}$ are the centered response variable and design matrix respectively.
 
 <details>
 
@@ -111,7 +117,7 @@ $$\begin{align*}
 Minimising w.r.t to the constant $\alpha$, so just looking at terms that depend on $\alpha$:
 
 $$\begin{align*}
-\frac{\partial}{\partial \alpha} - \alpha (Y^0)^T \mathbf{1} + \alpha (\mathbf{1}^T \mathbf{1}) \alpha + 2\beta^T \mathbf{X}^0 \alpha \mathbf{1} \\
+\frac{\partial}{\partial \alpha} - \alpha 2(Y^0)^T \mathbf{1} + \alpha (\mathbf{1}^T \mathbf{1}) \alpha + 2\beta^T \mathbf{X}^0 \alpha \mathbf{1} \\
 = -2(Y^0)^T \mathbf{1} + 2\alpha n + 2\beta^T \mathbf{X}^0 \mathbf{1}
 \end{align*}$$
 
@@ -122,12 +128,14 @@ $$\begin{align*}
 &= \bar{Y}^0 - \bar{X}^0 \beta
 \end{align*}$$
 
-Where $\bar{X}^0$ is the mean row vector of the design matrix. Hence plugging $\hat{\alpha}$ back into the objective gives:
+Where $\bar{X}^0$ is the mean row vector of the design matrix.
+
+Plugging $\hat{\alpha}$ back into the objective gives:
 
 $$
 \begin{align*}
-Y^0 - (\hat{\alpha} \mathbf{1} + \mathbf{X}^0 \beta) = (Y^0 - (\bar{Y}^0 \mathbf{1} - (\bar{X}^0 \beta)\mathbf{1} + \mathbf{X}^0 \beta)) \\
-= (Y^0 - \bar{Y}^0 \mathbf{1}) - (\mathbf{X}^0 - \bar{X}^0 \mathbf{1})\beta \\
+Y^0 - (\hat{\alpha} \mathbf{1} + \mathbf{X}^0 \beta) = (Y^0 - (\bar{Y}^0 \mathbf{1} - \mathbf{1}(\bar{X}^0 \beta) + \mathbf{X}^0 \beta)) \\
+= (Y^0 - \bar{Y}^0 \mathbf{1}) - (\mathbf{X}^0 - \mathbf{1} \bar{X}^0 )\beta \\
 = (Y -\mathbf{X} \beta)
 \end{align*}
 $$
@@ -135,7 +143,9 @@ $$
 Where $Y$ and $\mathbf{X}$ are the centered response variable and design matrix respectively.  
 
 
-- Solution for intercept $\beta$:
+- Solution for $\hat{\beta}$:
+
+
 
 
 
@@ -143,6 +153,8 @@ Where $Y$ and $\mathbf{X}$ are the centered response variable and design matrix 
 ***
 </div>
 </details>
+
+### Geometric Interpretation
 
 Least squares looks for $\beta$ that minimises the least squares distance, from $Y$ to a point in the column span of the design matrix $\mathbf{X}$. Therefore $\beta$ is chosen such that $Y$ is orthogonally projected on to the column space of $\mathbf{X}$. Recalling that the matrix that orthogonaly projects vectors onto the column space of a matrix $\mathbf{X}$ is the projection matrix:
 
@@ -183,10 +195,11 @@ We have shown that $\hat{\beta}$ is unbiased, under the assumption that $\mathbb
 If we <span style="color:red">further assume</span>  that $Var(\mathbf{\epsilon}) = \sigma^2 I$, then the Gauss-Markov Theorem holds.
 
 **The Gauss-Markov Theorem**  
-For all constant vectors $\mathbf{a} \in \mathbb{R}^p$, and linear unbiased estimators $\tilde{\beta}$ (linear in $Y$ i.e $t^TY$). 
+For all constant vectors $\mathbf{a} \in \mathbb{R}^p$, and linear unbiased estimators $\tilde{\beta}$ (linear in $Y$ i.e $t^TY$), then
+
 $$
 \begin{align*}
-Var(\mathbf{a}^T\hat{\beta}) \leq Var(\mathbf{a}^T\tilde{\beta})
+Var(\mathbf{a}^T\hat{\beta}) \leq Var(\mathbf{a}^T\tilde{\beta}) \, .
 \end{align*}
 $$
 
@@ -194,12 +207,18 @@ In words, under the assumptions:
 - $\mathbb{E}(\mathbf{\epsilon}) = 0$
 - $Var(\mathbf{\epsilon}) = \sigma^2 I$, uncorrelated and homoscedastic errors.
 
-The OLS estimator $\hat{\beta}$ is the best linear unbiased estimator (BLUE) of $\beta$. Where by best we mean it has the lowest variance.
+The OLS estimator $\hat{\beta}$ is the best linear unbiased estimator (BLUE) of $\beta$. Where by "best" we mean it has the lowest variance.
+
+***
+
+It is important to note that the Gauss-Markov theorem does not require the errors to be normally distributed, and therefore do not need to assume that the errors are independent.
 
 ### Scaling 
 
 A quick note on scaling in linear regression.  
 If you scale the $i\text{th}$ variable, i.e the $i\text{th}$ column of $\mathbf{X}$:  
+
+
 $$
 \begin{align*}
 a*x_{(i)}
@@ -207,20 +226,58 @@ a*x_{(i)}
 $$
 
 then, the reverse scaling is applied to the $i\text{th}$ coefficient $\beta_i$:  
+
 $$
 \begin{align*}
 \frac{\hat{\beta}_i}{a}
 \end{align*}
 $$
 
-if you scale the response variable $Y$ by a factor $a$, then the coefficients are scaled by the same factor.
+If you scale the response variable $Y$ by a factor $a$, then the coefficients are scaled by the same factor.
+
 $$
 \begin{align*}
 \hat{\beta}_i * a
 \end{align*}
 $$
 
-These can boths shown easily using the OLS solution $\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^TY$.
+These can both be shown using the OLS solution $\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^TY$.
+
+<details>
+
+  <summary markdown="span" style="color:#4863A0">Scaling predictor:</summary>
+<div markdown="1">
+
+Denote the scaled predictor by $$X^*_{(i)} = a \cdot X_{(i)}$$.  
+
+This can be written using a diagonal scale matrix (assume $i$ = 2):
+
+$$
+\begin{align*}
+W = \begin{bmatrix}
+1 & 0 & \dots & 0 \\
+0 & a & \dots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \dots & 1
+\end{bmatrix}
+\end{align*}
+$$
+
+then we can write $X^* = XW$.  
+
+$$
+\begin{align*}
+\hat{\beta}^* &= (W^T\mathbf{X}^T\mathbf{X}W)^{-1}W^T\mathbf{X}^TY \\
+&= W^{-1}\hat{\beta}
+\end{align*}
+$$
+
+therefore $\hat{\beta}^*_i = \hat{\beta}_i / a \, $. 
+
+
+</div>
+</details>
+
 
 
 ## Intervals and Testing
@@ -230,7 +287,7 @@ In order to carry out testing and construct confidence intervals, we additionall
 
 $$
 \begin{align*}
-\epsilon \sim N(0, \sigma^2 I)
+\epsilon \sim N(0, \sigma^2 I) \, .
 \end{align*}
 $$
 
@@ -242,7 +299,7 @@ $$
 \end{align*}
 $$
 
-Therefore in order to have a pivotal quantity we require an estimate of the variance of the errors $\sigma^2$. 
+therefore in order to have a pivotal quantity we also require an estimate of the variance of the errors $\sigma^2$. 
 
 An unbiased estimator of $\sigma^2$:
 
@@ -268,9 +325,11 @@ $$
 \end{align*}
 $$
 
+- <span style="color:red">two tailed test</span>
+
 and then this can be used to construct confidence intervals and carry out hypothesis tests.
 
->An important thing to note is that when carrying out linear regression in practice, in R for example, the estimators listed above are computed using the QR decomposition of the design matrix, which is more numerically stable. 
+>An important thing to note is that when carrying out linear regression in practice, in R for example, the estimators listed above are computed using the QR decomposition of the design matrix, which is more numerically stable. In addition the distribution of the estimators that are presented can be shown using the QR decomposition (as is done in the referenced lecture notes).
 {: .prompt-info }
 
 
@@ -327,6 +386,6 @@ x^T\hat{\beta} \pm t_{n-p}(\alpha) \hat{\sigma}\sqrt{1 + x^T(\mathbf{X}^T\mathbf
 \end{align*}
 $$
 
-Then for the mean response confidence interval we just remove the plus 1 that appears in the variance.
+Then for the **mean response** confidence interval we just remove the plus 1 that appears in the variance.
 
 
