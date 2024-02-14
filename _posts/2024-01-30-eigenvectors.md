@@ -3,6 +3,7 @@ layout: post
 title: Eigenvectors
 date: 2023-01-02 13:54 +0000
 math: true
+categories: [Maths, Linear Algebra]
 ---
 
 # Linear Algebra - Eigenvectors

@@ -3,6 +3,7 @@ layout: post
 title: Linear Algebra Foundations
 date: 2023-01-01 09:02 +0000
 math: true
+categories: [Maths, Linear Algebra]
 ---
 
 # Linear Algebra
@@ -167,7 +168,7 @@ Isomorphisms preserve dimension and therefore $rank(T)$ equals $rank(T').$
 > The column and row rank of a matrix $A$ are equal. This is called the rank of $A$. A matrix is **full rank** if its rank is the highest possible for a matrix of the same size.
 {: .prompt-info }
 
-Other useful results about the rank of matrices:
+Other useful results about the rank of matrices are listed below, other results regarding the rank of product of matrices can be found [here](https://www.statlect.com/matrix-algebra/matrix-product-and-rank).
 > Let $A$ be an $m \times n$ matrix and $B$ an $n \times p$ matrix. Then $rank(AB) \leq min(rank(A), rank(B))$
 {: .prompt-info }
 
@@ -260,42 +261,7 @@ The definition of **similar** matrices is the same as **equivalent** matrices bu
 Two matrices are **similar** if and only if they represent the same linear map $T : V → V$ with respect to different bases of $V$.
 
 
-## Eigenvectors and eigenvalues
-
-- A Hermitian matrix (includes real symmetric matrices) is positive definite if and only if all its eigenvalues are positive.
 
 
 
 
-## Projections
-
-- A projection is a map from a vector space to itself $P:V \rightarrow V$, often a subspace, such that $P^2 = P$
-	- We can write any point in the space $V$ as the sum of an element from $Im(P)$ and $Ker(P)$.
-
-- An **orthogonal projection** is a projection for which the image and the null space are orthogonal subspaces
-- A projection is orthogonal if and only if it is **self-adjoint**/**symmetric**
-	- A self-adjoint matrix with real entries is called symmetric
-
-> If we have a vector space $V$ with subspace $U$, out of all projections with image $U$. The projection that minimises the distance from a point $v \in V$ to its projected element $u \in U$, is **the** orthogonal projection.
-{: .prompt-tip }
-
-**Proof:**  
-
-Let $v \in V$ and $u \in U$ and $\pi()$ be the orthogonal projector. 
-By the Pythagorean theorem we have that:
-$||v - u||^2 = ||v - \pi(v)||^2 + ||\pi(v) - u||^2 \geq ||v - \pi(v)||^2$  
-
-So $\pi(v) \in Im(\pi)$ and $u \in Im(\pi)$. 
-Therefore $\pi(v) - u\in Im(\pi)$.
-
-$\pi(v - \pi(v)) = 0$ therefore $v - \pi(v) \in ker(\pi)$
-
-Therefore $v - \pi(v)$ and  $\pi(v) - u$ are orthogonal, so can use  Pythagorean theorem.
-
-Now can see that the minimum is attained if we let $u = \pi(v)$. I.e the projection to the subspace U that minimises the distance is the orthogonal projection.
-
-
-
-
-- In an inner-product space, the  **Pythagorean theorem**  states that for any two orthogonal vectors  **v**  and  **w**  we have 
-$||v + w||^2 = ||v||^2 + ||w||^2$
