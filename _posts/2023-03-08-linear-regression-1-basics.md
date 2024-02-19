@@ -329,7 +329,7 @@ $$
 
 and then this can be used to construct confidence intervals and carry out hypothesis tests.
 
->An important thing to note is that when carrying out linear regression in practice, in R for example, the estimators listed above are computed using the QR decomposition of the design matrix, which is more numerically stable. In addition the distribution of the estimators that are presented can be shown using the QR decomposition (as is done in the referenced lecture notes).
+>An important thing to note is that when carrying out linear regression in practice, in R for example, the estimators listed above are computed using the QR decomposition of the design matrix, which is more numerically stable. A description of the lower level functions used in R are described in [this blog post](http://madrury.github.io/jekyll/update/statistics/2016/07/20/lm-in-R.html). In addition the distribution of the estimators that are presented can be shown using the QR decomposition (as is done in the referenced lecture notes).
 {: .prompt-info }
 
 
@@ -387,5 +387,6 @@ x^T\hat{\beta} \pm t_{n-p}(\alpha) \hat{\sigma}\sqrt{1 + x^T(\mathbf{X}^T\mathbf
 $$
 
 Then for the **mean response** confidence interval we just remove the plus 1 that appears in the variance.
+
 
 

@@ -21,6 +21,8 @@ From this we can deduce the following properties:
 - We can write any point in the space $V$ as the sum of an element from $Im(P)$ and $Ker(P)$.
 - The eigenvalues of a projection matrix are 0 or 1.
 
+Projection operators on vector spaces, can be classified into two categories: **orthogonal** and **oblique** projections.
+
 
 ## Orthogonal Projections
 
@@ -35,11 +37,21 @@ An **orthogonal projection**
 > If we have a vector space $V$ with subspace $U$, out of all projections with image $U$. The projection that minimises the distance from a point $v \in V$ to its projected element $u \in U$, is **the** orthogonal projection.
 {: .prompt-tip }
 
-**Proof:**  
+
+
+<details>
+
+  <summary markdown="span" style="color:#4863A0">Proof:</summary>
+<div markdown="1">
+
 
 Let $v \in V$ and $u \in U$ and $\pi()$ be the orthogonal projector. 
 By the Pythagorean theorem we have that:
-$||v - u||^2 = ||v - \pi(v)||^2 + ||\pi(v) - u||^2 \geq ||v - \pi(v)||^2$  
+$||v - u||^2 = ||v - \pi(v)||^2 + ||\pi(v) - u||^2 \geq ||v - \pi(v)||^2$ 
+
+> In an inner-product space, the  **Pythagorean theorem**  states that for any two orthogonal vectors  **v**  and  **w**  we have 
+$||v + w||^2 = ||v||^2 + ||w||^2$.
+{: .prompt-info }
 
 So $\pi(v) \in Im(\pi)$ and $u \in Im(\pi)$. 
 Therefore $\pi(v) - u\in Im(\pi)$.
@@ -50,15 +62,13 @@ Therefore $v - \pi(v)$ and  $\pi(v) - u$ are orthogonal, so can use  Pythagorean
 
 Now can see that the minimum is attained if we let $u = \pi(v)$. I.e the projection to the subspace U that minimises the distance is the orthogonal projection.
 
+</div>
+</details>
 
-
-
-- In an inner-product space, the  **Pythagorean theorem**  states that for any two orthogonal vectors  **v**  and  **w**  we have 
-$||v + w||^2 = ||v||^2 + ||w||^2$
-
+*** 
 
 The matrix that represents the orthogonal projection onto the column space of a matrix $X$ is given by:
 
 $$X(X^TX)^{-1}X^T$$
 
-In addition, as for any full rank/invertible matrix $A$, $XA$ will have the same column space as $X$. And hence it makes sense that substituting $X$ with $XA$ will give the same projection matrix above.
+In addition, for any full rank/invertible matrix $A$, $XA$ will have the same column space as $X$. And hence it makes sense that substituting $X$ with $XA$ will give the same projection matrix above.

@@ -26,7 +26,7 @@ $$
 \end{align*}
 $$
 
-Where $U$ is an $n \times n$ orthogonal matrix, $L$ is an $n \times p$ rectangular diagonal matrix with non-negative entries, and $V$ is a $p \times p$ orthogonal matrix.
+Where $U$ is an $n \times n$ orthogonal matrix, $L$ is an $n \times p$ rectangular diagonal matrix with non-negative entries ([singular values](https://dylandijk.github.io/posts/eigenvectors/#singular-values)), and $V$ is a $p \times p$ orthogonal matrix.
 
 This is saying that:
 
@@ -52,7 +52,7 @@ $$
 
 Where $E$ is the orthogonal matrix with columns being the eigenvectors of $A$. And $D$ is a diagonal matrix with eigenvalues of $A$. 
 
-This has the same **geometric** interpretation but now the second rotation is the same as the first. This [video](https://www.youtube.com/watch?v=mhy-ZKSARxI&t=762s&ab_channel=VisualKernel) provides a visualisation.
+This has the same **geometric** interpretation but now the second rotation is the same as the first. This [video](https://youtu.be/mhy-ZKSARxI?t=724) provides a visualisation.
  
 
 ### Relationship between the two
