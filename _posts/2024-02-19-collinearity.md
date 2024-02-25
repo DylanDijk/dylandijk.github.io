@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Collinearity
+title: Collinearity and Confounding
 date: 2024-02-19 09:17 +0000
 math: true
 categories: [Statistics, Regression]
