@@ -8,6 +8,15 @@ categories: [Maths, Linear Algebra]
 
 # Linear Algebra - Eigenvectors
 
+
+## Eigenvalues and eigenvectors
+
+If $\mathbf{v}_i$
+is an eigenvector of matrix $A$ with eigenvalue $\lambda_i$ and $\alpha \neq 0$, then any $\alpha \mathbf{v}_i$ is also an eigenvector of A with eigenvalue $\lambda_i$. Hence, often w.l.o.g we assume that the eigenvectors are normalised. But even they are not uniquely defined, for example they are only identified up to sign.
+
+
+
+
 ## Singular values
 
 **Singular values** of a matrix $A$, are the square roots of the eigenvalues of $A^TA$

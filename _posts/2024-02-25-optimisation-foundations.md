@@ -2,6 +2,7 @@
 layout: post
 title: Optimisation foundations
 date: 2024-02-25 14:24 +0000
+math: true
 ---
 
 - Matteo theory of inference note chapter 8 is on MLE and talks about optimisation. Says stuff like:
@@ -38,7 +39,10 @@ f(\mathbf{x}) = f(\mathbf{a}) + \nabla f(\mathbf{a})^T(\mathbf{x}-\mathbf{a}) + 
 \end{align*}
 $$
 
-where $R_2(\mathbf{x}) = o(||\mathbf{x}-\mathbf{a}||^2)$ as $||\mathbf{x}-\mathbf{a}|| \to 0$.
+where
+$R_2(\mathbf{x}) = 
+o(||\mathbf{x}-\mathbf{a}||^2)$ 
+as $||\mathbf{x}-\mathbf{a}|| \to 0$.
 
 
 - convexity
