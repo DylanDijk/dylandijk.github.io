@@ -62,10 +62,16 @@ To then merge these changes with your local repo you use `git pull` command.
 	- To get commit codes can use `git log .` to view all commits.  
 	`git log --pretty=oneline` to view all commits in one line.
 
+***
+
 - You want to **view** the state of previous commit but not to go back to it permanently.
 	- `git checkout a867b4af`  
 	Where the code here is the commit you want to view.
-	
+
+***
+
+- You have added a file to the staging area with `git add`, but now want to remove it from the staging area.
+	- `git restore --staged <filename>` will remove the file from the staging area. 
 
 ## Branches
 - list local branches `git branch`

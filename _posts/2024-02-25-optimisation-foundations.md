@@ -5,6 +5,13 @@ date: 2024-02-25 14:24 +0000
 math: true
 ---
 
+**References**
+1. [Introduction to nonlinear optimization](https://www.math.kent.edu/~reichel/courses/optimization/beck.pdf) - Amir Beck
+
+
+***
+
+
 - Matteo theory of inference note chapter 8 is on MLE and talks about optimisation. Says stuff like:
 
         The terminology relates to the fact that a likelihood containing
