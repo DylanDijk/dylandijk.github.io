@@ -283,7 +283,7 @@ therefore $\hat{\beta}^*_i = \hat{\beta}_i / a \, $.
 ## Intervals and Testing
 
 ### Model parameters
-In order to carry out testing and construct confidence intervals, we additionally assume that:  
+In order to carry out testing and construct confidence intervals, we <span style="color:red">additionally assume</span> that:  
 
 $$
 \begin{align*}
