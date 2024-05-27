@@ -96,6 +96,15 @@ To then merge these changes with your local repo you use `git pull` command.
 - To push the tag to the remote repo you run `git push origin v1.0.0`. Where `v1.0.0` is the tag name.
 - You can then use the tags to publish new releases on the GitHub repo.
 
+
+## Ignoring
+- File change keeps appearing in git status even though it has been added to `.gitignore`
+	- This is because the file has already been tracked by git. To stop tracking the file you need to run `git rm --cached <file>`. Then commit the changes.
+- You want git to ignore certain files, but want to avoid using the `.gitignore` file.  
+For example, if you have forked a repo and made personal notes that you do not want to be included in a pull request, and you also do not want a modified `.gitignore` file to appear in the pull request.  
+A solution is to list the files in the `.git/info/exclude` file within your local repo.
+
+
 ## Useful Things
 
 - Renaming a file on local Git Repo
@@ -110,8 +119,7 @@ To then merge these changes with your local repo you use `git pull` command.
 - You have made local changes that you realise are "bad" and you do not want to commit them
   - Running `git reset --hard` will delete these changes and you will be in the state of your last commit. But note that all of that work will be deleted.
   - Not specifying a commit will reset to the commit pointed to by `HEAD`.
-- File change keeps appearing in git status even though it has been added to `.gitignore`
-	- This is because the file has already been tracked by git. To stop tracking the file you need to run `git rm --cached <file>`. Then commit the changes.
+
 
 - The `git checkout` command lets you navigate between the branches created by `git branch`. Checking out a branch updates the files in the working directory to match the version stored in that branch, and it tells Git to record all new commits on that branch. Think of it as a way to select which line of development you’re working on.
 
