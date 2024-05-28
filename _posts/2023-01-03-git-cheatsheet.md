@@ -27,7 +27,8 @@ $ git add -A
 
 The git aliases are stored in the `.gitconfig` file, usually in your home folder.
 
-Another option to create git aliases is to actually make Linux aliases. This can be done by adding them to the `.bashrc` file. For example:
+Another option to create git aliases is to actually make Linux aliases. This can be done by adding them to the `.bashrc` file. The git aliases that I use are given [here](https://dylandijk.github.io/posts/linux-aliases/).  
+For example:
 
 ```shell
 alias gs='git status'
@@ -92,9 +93,17 @@ To then merge these changes with your local repo you use `git pull` command.
 ## Tags 
 
 - When releasing software it is useful to label a specific commit that is an important milestone in the project. For example, you may want to tag the commit that is the first release of the software to the public. 
-- To create a tag for a specific commit you run `git tag -a v1.0.0 74202f7 -m "message here"`. Where `v1.0.0` is the tag name, `74202f7` is the commit code and `-m` is the message. Use `git log --pretty=oneline` to view the commit codes.
+- To view all tags `git tag`
+- View tags and their descriptions `git tag -n`
+- View detailed information regarding a specific tag `git show <tagname>`
+- To create a tag for a specific commit you run `git tag -a v1.0.0 74202f7 -m "message here"`. Where `v1.0.0` is the tag name, `74202f7` is the commit code and `-m` is the message.  
+Use `git log --pretty=oneline` to view the commit codes.
 - To push the tag to the remote repo you run `git push origin v1.0.0`. Where `v1.0.0` is the tag name.
 - You can then use the tags to publish new releases on the GitHub repo.
+- Can checkout a tag, for example `git checkout v1.0.1`.
+	- Afterwards to return to an undetached HEAD state run `git checkout main` or `git checkout master`.
+
+
 
 
 ## Ignoring
