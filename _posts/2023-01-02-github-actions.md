@@ -1,7 +1,7 @@
 ---
 title: Scheduling an R Script - GitHub Actions
 date: 2023-01-02 18:25:00 +0000
-categories: [Note to self, GitHub]
+categories: [Git, GitHub]
 tags: [GitHub, GitHub actions]     # TAG names should always be lowercase
 ---
 

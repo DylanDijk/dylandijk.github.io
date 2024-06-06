@@ -1,7 +1,7 @@
 ---
 title: Creating an R Package - Cheat Sheet
 date: 2023-01-09 09:42:00 +0000
-categories: [Cheat sheet, R]
+categories: [R, Cheat sheet]
 tags: [R, R Packages, Cheat sheet]
 img_path: /assets/img/figures/
 ---

@@ -1,7 +1,7 @@
 ---
 title: Git Commands - Cheat Sheet
 date: 2023-01-03 12:10:00 +0000
-categories: [Cheat sheet, Git]
+categories: [Git, Cheat sheet]
 tags: [Git, GitHub, Cheat sheet]     # TAG names should always be lowercase
 ---
 
