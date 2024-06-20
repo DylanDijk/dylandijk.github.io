@@ -31,7 +31,7 @@ The classical example, is the case of predicting the dominant hand in a populati
 
 Precision tells us the precision of our predictions for a certain class. This is useful when we have an imbalanced dataset.
 
-For example, if we let the positive class be the class with very few observations, left hand in the previous example. Then if you predict everyone as right handed, this will give a precision of 0.
+For example, if we let the positive class be the class with very few observations, left hand in the previous example. Then if you predict everyone as right handed, this will be 0/0 which is set to be 0. 
 
 $$
 \begin{align*}
@@ -57,3 +57,4 @@ Recall &= \frac{\text{Correct predictions for the postive class}}{\text{Total ac
 \end{align*}
 $$
 
+This the same as the true positive rate TPR.
