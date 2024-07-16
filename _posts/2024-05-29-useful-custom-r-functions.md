@@ -24,3 +24,7 @@ heatmap_scale = function(matrix1, matrix2){
   
 }
 ```
+Quick heatmap plot in R:
+```r
+heatmap(matrix, Colv = NA, Rowv = NA,  scale = "none")
+```
