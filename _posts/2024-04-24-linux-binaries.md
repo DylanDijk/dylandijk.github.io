@@ -4,6 +4,9 @@ title: Linux Binaries
 date: 2024-04-24 09:33 +0000
 ---
 
+Add bash script to `usr/bin` folder then run `chmod +x your_binary`, and add `export PATH=$PATH:~/usr/bin` to bottom of `.bashrc` file.
+
+
 
 Below I give my Linux binaries
 
