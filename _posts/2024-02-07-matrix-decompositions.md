@@ -63,4 +63,28 @@ http://theanalysisofdata.com/probability/C_5.html#:~:text=The%20following%20coro
 
 ## Cholesky decomposition
 
-- Cholesky decomposition exists $\iff$ $M$ is symmetric and positive definite.
+$$
+A = R^TR
+$$
+
+Where $A$ is a symmetric positive definite matrix, and $R$ is an upper triangular matrix.
+
+
+- Unique Cholesky decomposition exists $\iff$ $M$ is symmetric and positive definite.
+
+
+## QR decomposition
+
+Any real $r \times c$ matrix $A$ can be decomposed into the product of an orthogonal matrix $Q$ and rectangulat upper triangular matrix $R$.  
+
+Which can then be simplified to:
+
+$$
+\begin{align*}
+    A = QR = \begin{bmatrix} Q_1 & Q_2 \end{bmatrix} \begin{bmatrix} R_1 \\ 0 \end{bmatrix} = Q_1R_1
+\end{align*}
+$$
+Where $Q_1$ is an $r \times c$ matrix with orthonormal columns, and $R_1$ is an $c \times c$ upper triangular matrix.
+
+
+

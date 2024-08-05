@@ -48,3 +48,13 @@ export PATH="$HOME/bin:$PATH"
 export PATH="/home/zl22291@bristol.ac.uk/.local/bin:$PATH"
 ```
 {: .nolineno file=".bashrc" }
+
+
+## On HPC:
+
+```bash
+# User specific aliases and functions
+alias work='cd /user/work/zl22291'
+alias home='cd /user/home/zl22291'
+```
+{: .nolineno file=".bashrc" }
