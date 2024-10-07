@@ -33,10 +33,10 @@ heatmap(matrix, Colv = NA, Rowv = NA,  scale = "none")
 
 Plot eigen values of covariance matrix
 ```r
-plot_eig_values = function(x){
-        cov_d = (1/nrow(x)) * ( t(x) %*% x )
-        cov_d_eig = eigen(cov_d)
-        plot(cov_d_eig$values)
+plot_eig_values = function(x, main = NULL){
+     cov_d = (1/nrow(x)) * ( t(x) %*% x )
+     cov_d_eig = eigen(cov_d)
+     plot(cov_d_eig$values, main = main)
 }
 ```
 
