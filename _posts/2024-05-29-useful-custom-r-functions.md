@@ -28,3 +28,15 @@ Quick heatmap plot in R:
 ```r
 heatmap(matrix, Colv = NA, Rowv = NA,  scale = "none")
 ```
+
+# Eigen-analysis
+
+Plot eigen values of covariance matrix
+```r
+plot_eig_values = function(x){
+        cov_d = (1/nrow(x)) * ( t(x) %*% x )
+        cov_d_eig = eigen(cov_d)
+        plot(cov_d_eig$values)
+}
+```
+
