@@ -78,10 +78,12 @@ To then merge these changes with your local repo you use `git pull` command.
 - list local branches `git branch`
 - list remote branches with `git branch -r`
 - create a new branch `git checkout -b your_new_branch`
+	- if you want to push the branch to github, use the command `git push -u origin your_new_branch`
 - Can create new branch then go back to original branch and then revert changes look [here](https://stackoverflow.com/questions/2816715/branch-from-a-previous-commit-using-git/31783383#31783383) but use git revert instead of `git reset`.
 - `git branch -vv` to view all tracking branches
 - After merging a branch you may want to delete it, you can do this with  `git branch -d <Branch Name>`. This deletes the local branch.
 - To delete a remote branch you can run `git push <remote_name> --delete <branch_name>`
+
 
 ## Merge
 - if you want to merge branch 2 into branch 1, first make sure you are in branch 1 do this by using the command `git switch branch 1`. Then `git merge branch 2` .
@@ -131,6 +133,11 @@ A solution is to list the files in the `.git/info/exclude` file within your loca
 
 
 - The `git checkout` command lets you navigate between the branches created by `git branch`. Checking out a branch updates the files in the working directory to match the version stored in that branch, and it tells Git to record all new commits on that branch. Think of it as a way to select which line of development you’re working on.
+
+- you have made uncommited changes on your main branch, and you realised that this work should be on another branch:
+	- whilst on main branch use `git stash`
+	- switch to new branch `git checkout -b new-branch-name`
+	- move the uncommited changes to this new branch `git stash pop`
 
 
 
