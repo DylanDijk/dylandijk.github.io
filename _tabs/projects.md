@@ -45,6 +45,7 @@ A [commit](https://github.com/cran-task-views/Pharmacokinetics/commit/f841bfaa39
   - In the [Distributions](https://github.com/cran-task-views/Distributions) Task View, CTVsuggest has been [added to the workflow](https://github.com/cran-task-views/Distributions/commit/6439439cc76eee9d59065824c2607e8efb6c111c)
   - [Issue](https://github.com/cran-task-views/Hydrology/issues/141#issue-1702686855) in the Hydrology Task View agreeing with CTVsuggest suggestions.
   - Additions in the Epidemiology Task View, with commits mentioned in [this issue](https://github.com/cran-task-views/Epidemiology/issues/29#ref-commit-c85ef37).
+  - Additions in the SportsAnalytics Task View, with commits mentioned in [this issue](https://github.com/cran-task-views/SportsAnalytics/issues/13).
 
 </div>
 </details>
