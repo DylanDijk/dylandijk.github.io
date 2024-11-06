@@ -9,11 +9,16 @@ categories: [Maths, Linear Algebra]
 # Linear Algebra
 
 **References**:  
-Linear algebra - [lecture notes](https://dylandijk.github.io/assets/pdf/MA106LAnotes.pdf)
+- Warwick Linear algebra - [lecture notes](https://dylandijk.github.io/assets/pdf/MA106LAnotes.pdf)
+
+- Bristol Linear algebra - [lecture notes](https://dylandijk.github.io/assets/pdf/LinearAlgebra-CharlesCox-Bristol.pdf)
+
 
 ## Fields
 A **field** is a set $S$ with two binary operations (a map from $S \times S$ to $S$ ): Addition and Multiplication.
 These two operations are required to satisfy the **field axioms**. For example there must be an Additive and Multiplicative Identity in $S$.
+
+A field can also be succintly defined in terms of abelian groups. That is, for each operation individually, the set $S$ with this operation forms an abelian group. Definition 6.3, in the Bristol notes.
 
 A **Vector Space** over a field  $F$ is a set $V$ together with two binary operations that satisfy the eight axioms listed [here](https://en.wikipedia.org/wiki/Vector_space#Definition_and_basic_properties). In this context, the elements of $V$ are commonly called _vectors_, and the elements of $F$ are called _scalars_. 
 -   The first operation, called  _vector addition_  or simply  _addition_  assigns to any two vectors **v**  and  **w**  in  $V$  a third vector in  $V$  which is commonly written as  **v**  +  **w**, and called the  _sum_  of these two vectors.
