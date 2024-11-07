@@ -40,3 +40,13 @@ plot_eig_values = function(x, main = NULL){
 }
 ```
 
+# Max index of matrix
+
+Get the row and column number of largest element of matrix
+```
+max_ind = function(mat){
+  max_index <- which(mat == max(mat), arr.ind = TRUE)
+  max_index
+}
+
+```
