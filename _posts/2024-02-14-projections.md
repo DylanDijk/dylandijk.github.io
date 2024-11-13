@@ -31,7 +31,7 @@ An **orthogonal projection**
 
 
 - An **orthogonal projection** is a projection for which the image and the null space are orthogonal subspaces
-- A projection is orthogonal if and only if it is **self-adjoint**/**symmetric**
+- A projection is orthogonal if and only if it is **Hermitian**/**self-adjoint**/**symmetric**
 	- A self-adjoint matrix with real entries is called symmetric
 
 > If we have a vector space $V$ with subspace $U$, out of all projections with image $U$. The projection that minimises the distance from a point $v \in V$ to its projected element $u \in U$, is **the** orthogonal projection.
