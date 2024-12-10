@@ -10,17 +10,25 @@ tags: [R]
 
 Given two matrices, this function plots heatmaps for each one with a fixed colour scale to allow for comparison.
 ```r
-heatmap_scale = function(matrix1, matrix2, main1 = NULL, main2 = NULL){
-    
-  global_min <- min(matrix1, matrix2)
-  global_max <- max(matrix1, matrix2)
+heatmap_scale = function(matrix1, matrix2, main1 = NULL, main2 = NULL, centr = FALSE){
   
   my_palette <- colorRampPalette(c("blue", "white", "red"))(n = 299)
+
+  if(!centr){
+    global_min <- min(matrix1, matrix2)
+    global_max <- max(matrix1, matrix2)
   
+    breaks = seq(global_min, global_max, length.out = 300)
+  } else {
+    breaks_ <- seq(-max(abs(global_min), abs(global_max)), 
+                      max(abs(global_min), abs(global_max)), 
+                      length.out = 300)
+  }
+
   heatmap(matrix1, Colv = NA, Rowv = NA, scale = "none",
-          col = my_palette, breaks = seq(global_min, global_max, length.out = 300), main = main1)
+          col = my_palette, breaks = breaks, main = main1)
   heatmap(matrix2, Colv = NA, Rowv = NA, scale = "none",
-          col = my_palette, breaks = seq(global_min, global_max, length.out = 300), main = main2)
+          col = my_palette, breaks = breaks, main = main2)
   
 }
 ```
