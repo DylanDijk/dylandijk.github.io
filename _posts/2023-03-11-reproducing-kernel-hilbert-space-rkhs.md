@@ -90,5 +90,34 @@ Note that every reproducing kernel is a kernel function, in that case the featur
 
 Now, if we are given a kernel $K$, there are infinitely many feature transformations, that is, there exist many different $\phi: \mathcal{X} \rightarrow \mathcal{H}$ such that we can write $K(x, y) = \langle \phi(x), \phi(y) \rangle_{\mathcal{H}}$. However, by Moore-Aronszajn theorem, there is a single unique RKHS $\mathcal{H}$ such that $K$ is the reproducing kernel of $\mathcal{H}$. 
 
-At first when I learnt about RKHS I was confused by what 
 
+
+## Example
+
+Suppose our feature space is $\mathbb{R}^d$ and we decide to use the linear kernel $K(x, y) = \langle x, y \rangle_{\mathbb{R}^d}$. Then the feature map is $\phi(x) = x$.
+
+Now by Moore-Aronszajn theorem, we know there exists a unique RKHS $\mathcal{H} \subseteq \mathcal{F}(\mathbb{R}^d, \mathbb{R})$ such that $K$ is the reproducing kernel of $\mathcal{H}$.
+
+In this case, the space of functions $\mathcal{H}$ is the space of all functions that can be written as a linear combination of the form:
+$$\begin{align*}
+f(x) = \langle x, w \rangle_{\mathbb{R}^d}
+\end{align*}$$
+where $w \in \mathbb{R}^d$ is a fixed vector. 
+
+Now the inner product in this space $\mathcal{H}$ is given by:
+$$\begin{align*}
+\langle f, g \rangle_{\mathcal{H}} = \langle w_f, w_g \rangle_{\mathbb{R}^d}
+\end{align*}$$
+where $f(x) = \langle x, w_f \rangle_{\mathbb{R}^d}$ and $g(x) = \langle x, w_g \rangle_{\mathbb{R}^d}$.
+
+The reproducing kernel of this space is given by:
+$$\begin{align*}
+K(\cdot, x) = \langle \cdot, x \rangle_{\mathbb{R}^d}
+\end{align*}$$
+
+We can see that this has the reproducing property:
+$$\begin{align*}
+\langle f, K(\cdot, x) \rangle_{\mathcal{H}} = \langle w_f, x \rangle_{\mathbb{R}^d} = \langle x, w_f \rangle_{\mathbb{R}^d} = f(x)
+\end{align*}$$
+
+This is example of starting from a kernel and giving its corresponding RKHS.
