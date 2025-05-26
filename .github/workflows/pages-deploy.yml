@@ -42,16 +42,17 @@ jobs:
       - name: Test site with HTMLProofer
         run: bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
 
-      - name: Upload artifact (no symlinks)
+      - name: Upload artifact (no symlinks, rsync copy)
         run: |
-          mkdir _site_no_symlinks
-          cp -rL _site/. _site_no_symlinks  # -L follows symlinks
+          mkdir _site_clean
+          rsync -a --copy-links --safe-links _site/ _site_clean/
         shell: bash
 
       - uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: _site_no_symlinks
+          path: _site_clean
+
 
   deploy:
     needs: build
