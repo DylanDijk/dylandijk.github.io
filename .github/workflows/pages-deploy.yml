@@ -35,18 +35,23 @@ jobs:
           bundler-cache: true
 
       - name: Build Jekyll site
-        run: bundle exec jekyll b -d _site
+        run: bundle exec jekyll b
         env:
           JEKYLL_ENV: production
 
       - name: Test site with HTMLProofer
         run: bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact (no symlinks)
+        run: |
+          mkdir _site_no_symlinks
+          cp -rL _site/. _site_no_symlinks  # -L follows symlinks
+        shell: bash
+
+      - uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: _site
+          path: _site_no_symlinks
 
   deploy:
     needs: build
