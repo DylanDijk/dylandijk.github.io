@@ -121,4 +121,3 @@ $$\begin{align*}
 \end{align*}$$
 
 This is example of starting from a kernel and giving its corresponding RKHS.
-
