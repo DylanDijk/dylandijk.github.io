@@ -45,8 +45,19 @@ jobs:
       - name: Upload artifact (no symlinks, rsync copy)
         run: |
           mkdir _site_clean
-          rsync -a --copy-links --safe-links _site/ _site_clean/
+          rsync -a --copy-links --safe-links \
+            --exclude '.git' \
+            --exclude 'vendor' \
+            _site/ _site_clean/
         shell: bash
+
+      - name: Debug: Check for symlinks and size
+        run: |
+          echo "Listing all symbolic links:"
+          find _site_clean -type l
+
+          echo "Checking total size:"
+          du -sh _site_clean
 
       - uses: actions/upload-artifact@v4
         with:
