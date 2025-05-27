@@ -40,8 +40,10 @@ jobs:
       - name: Test site with HTMLProofer
         run: bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
 
-      - name: Archive site
-        run: zip -r site.zip _site
+      - name: Archive site contents only
+        run: |
+          cd _site
+          zip -r ../site.zip . -x "*.git*" "*.DS_Store*" "vendor/*"
         shell: bash
 
       - name: Upload site artifact
