@@ -51,7 +51,7 @@ jobs:
             _site/ _site_clean/
         shell: bash
 
-      - name: Debug: Check for symlinks and size
+      - name: Debug Check for symlinks and size
         run: |
           echo "Listing all symbolic links:"
           find _site_clean -type l
