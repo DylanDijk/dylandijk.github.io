@@ -42,29 +42,17 @@ jobs:
       - name: Test site with HTMLProofer
         run: bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
 
-      - name: Upload artifact (no symlinks, rsync copy)
+      - name: Zip _site for upload
         run: |
-          mkdir _site_clean
-          rsync -a --copy-links --safe-links \
-            --exclude '.git' \
-            --exclude 'vendor' \
-            _site/ _site_clean/
+          cd _site
+          zip -r ../site.zip . -x "*.git*" "*.DS_Store*" "vendor/*"
         shell: bash
 
-      - name: Debug Check for symlinks and size
-        run: |
-          echo "Listing all symbolic links:"
-          find _site_clean -type l
-
-          echo "Checking total size:"
-          du -sh _site_clean
-        shell: bash
-
-      - uses: actions/upload-artifact@v4
+      - name: Upload zipped site
+        uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: _site_clean
-
+          path: site.zip
 
   deploy:
     needs: build
