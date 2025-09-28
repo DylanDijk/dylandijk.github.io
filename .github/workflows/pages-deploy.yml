@@ -12,9 +12,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write  # Needed to push to gh-pages branch
 
 concurrency:
   group: "pages"
@@ -42,25 +40,48 @@ jobs:
       - name: Test site with HTMLProofer
         run: bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
 
-      - name: Zip _site for upload
+      - name: Archive site contents only
         run: |
           cd _site
           zip -r ../site.zip . -x "*.git*" "*.DS_Store*" "vendor/*"
         shell: bash
 
-      - name: Upload zipped site
+      - name: Upload site artifact
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages
+          name: site
           path: site.zip
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+
     steps:
-      - name: Deploy to GitHub Pages
-        id: deploy
-        uses: actions/deploy-pages@v4
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Download site artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+
+      - name: Unzip site
+        run: unzip site.zip -d _site
+        shell: bash
+
+      - name: Setup Git
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+
+      - name: Deploy to gh-pages branch
+        run: |
+          git fetch origin
+          git switch --orphan gh-pages || git checkout gh-pages
+          git reset --hard
+          rm -rf *
+          cp -r _site/* .
+          touch .nojekyll
+          git add .
+          git commit -m "Deploy site" || echo "No changes to commit"
+          git push --force origin gh-pages
