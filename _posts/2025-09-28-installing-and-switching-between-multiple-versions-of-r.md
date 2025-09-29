@@ -11,3 +11,15 @@ To do this on linux (ubuntu), I used these three tutorials:
 - [Posit instructions to install an R version](https://docs.posit.co/resources/install-r.html)
 - [Posit switching between R versions](https://support.posit.co/hc/en-us/articles/200486138-Changing-R-versions-for-the-RStudio-Desktop-IDE)
 
+
+Following these instructions on a linux machine will allow you to have multiple R versions in the `/opt/R` directory.
+
+Then in order to open Rstudio with a certain R version in use. In terminal you need to run:
+```bash
+export RSTUDIO_WHICH_R=/opt/R/4.4.2/bin/R
+```
+and then in the same terminal session go to your R project file location and open your project file with the following command:
+```bash
+rstudio truncFVAR.Rproj
+``` 
+
