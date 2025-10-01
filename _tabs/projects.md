@@ -55,3 +55,6 @@ A [commit](https://github.com/cran-task-views/Pharmacokinetics/commit/f841bfaa39
 
 </div>
 </details>
+
+***
+
