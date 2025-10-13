@@ -12,7 +12,7 @@ order: 1
 
   These R packages are based on follow up work of my 4<sup>th</sup> year university [dissertation](https://dylandijk.github.io/assets/pdf/Dissertation.pdf).
 
-  The functionality of the CTVsuggest package was announced by [Achim Zeileis](https://www.zeileis.org/) to the CRAN Task View maintainers, on the 22<sup>nd</sup> of March 2023.
+  The functionality of the CTVsuggest package was announced by [Achim Zeileis](https://www.zeileis.org/) to the CRAN Task View maintainers, on the 22<sup>nd</sup> of March 2023, and was cited in [this report](https://arxiv.org/pdf/2305.17573) describing the transfer of the Task View management to GitHub. Since the release, the package has been frequently used by maintainers, with examples given below.
    <details>
 
   <summary markdown="span" style="color:#4863A0">Feedback from Task View Maintainers</summary>
@@ -58,3 +58,6 @@ A [commit](https://github.com/cran-task-views/Pharmacokinetics/commit/f841bfaa39
 
 ***
 
+## Tail-robust estimation of factor-adjusted vector autoregressive models for high-dimensional time series
+
+As part of my PhD, alongside my supervisor [Haeran Cho](https://sites.google.com/view/haeran-cho/home), we wrote a paper proposing a methodology to model high-dimensional time-series which can handle heavy-tailed data. The prepint is available [here](https://arxiv.org/pdf/2509.22235), and the corresponding code [here](https://github.com/DylanDijk/truncFVAR).
