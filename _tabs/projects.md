@@ -6,6 +6,12 @@ order: 1
 
 ***
 
+## Tail-robust estimation of factor-adjusted vector autoregressive models for high-dimensional time series
+
+As part of my PhD, alongside my supervisor [Haeran Cho](https://sites.google.com/view/haeran-cho/home), we wrote a paper proposing a methodology to model high-dimensional time-series which can handle heavy-tailed data. The prepint is available [here](https://arxiv.org/pdf/2509.22235), and the corresponding code [here](https://github.com/DylanDijk/truncFVAR).
+
+***
+
 ## Created the [CTVsuggest](https://dylandijk.github.io/CTVsuggest/) and [CTVsuggestTrain](https://dylandijk.github.io/CTVsuggestTrain/) R Packages.  
   - The **CTVsuggest** R package outputs suggestions for packages to be added to CRAN Task Views.
   - The **CTVsuggestTrain** R package carries out the model building process.
@@ -52,12 +58,7 @@ A [commit](https://github.com/cran-task-views/Pharmacokinetics/commit/f841bfaa39
   - 19/11/2024 - [**Issue**](https://github.com/cran-task-views/DynamicVisualizations/issues/13#issue-2673539303) in the *DynamicVisualizations* Task View.
   - 09/12/2024 - [**Issue**](https://github.com/cran-task-views/Phylogenetics/issues/9) in the *Phylogenetics* Task View, where they added a bunch of recommended packages.
   - 09/12/2024 - [**Issue**](https://github.com/cran-task-views/Paleontology/issues/6) in the *Paleontology* Task View, looking at suggestions from CTVsuggest.
+  - 05/12/2025 -  [**Commit**](https://github.com/cran-task-views/NetworkAnalysis/commit/0fb8a5702bd1d259d051b2980540c8f212086790) titled: "Suggestions from CTVsuggest" was made in the *NetworkAnalysis* Task View.
 
 </div>
 </details>
-
-***
-
-## Tail-robust estimation of factor-adjusted vector autoregressive models for high-dimensional time series
-
-As part of my PhD, alongside my supervisor [Haeran Cho](https://sites.google.com/view/haeran-cho/home), we wrote a paper proposing a methodology to model high-dimensional time-series which can handle heavy-tailed data. The prepint is available [here](https://arxiv.org/pdf/2509.22235), and the corresponding code [here](https://github.com/DylanDijk/truncFVAR).
