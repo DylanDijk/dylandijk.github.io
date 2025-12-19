@@ -59,6 +59,7 @@ A [commit](https://github.com/cran-task-views/Pharmacokinetics/commit/f841bfaa39
   - 09/12/2024 - [**Issue**](https://github.com/cran-task-views/Phylogenetics/issues/9) in the *Phylogenetics* Task View, where they added a bunch of recommended packages.
   - 09/12/2024 - [**Issue**](https://github.com/cran-task-views/Paleontology/issues/6) in the *Paleontology* Task View, looking at suggestions from CTVsuggest.
   - 05/12/2025 -  [**Commit**](https://github.com/cran-task-views/NetworkAnalysis/commit/0fb8a5702bd1d259d051b2980540c8f212086790) titled: "Suggestions from CTVsuggest" was made in the *NetworkAnalysis* Task View.
+  - 19/12/2025 -  [**Commit**](https://github.com/cran-task-views/TeachingStatistics/commit/25482090ee1d2cd1aa8668780b79e20334eeecf5) titled: "Update TeachingStatistics.md using the CTVsuggest package" was made in the *TeachingStatistics* Task View.
 
 </div>
 </details>
